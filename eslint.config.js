@@ -81,16 +81,14 @@ export default [
     languageOptions: {
       globals: globals.browser,
       parser: vueEslintParser,
-      parserOptions: {
-        ecmaFeatures: { jsx: true },
-        parser: { ts: eslintTs.configs.recommended.parser }
-      },
+      parserOptions: { parser: { ts: eslintTs.parser } },
       sourceType: 'module'
     },
     plugins: {
       '@typescript-eslint': eslintTs,
       vue: pluginVue
     },
+    processor: 'vue/vue',
     rules: {
       ...pluginVue.configs['flat/recommended'].rules,
       'vue/html-indent': [
