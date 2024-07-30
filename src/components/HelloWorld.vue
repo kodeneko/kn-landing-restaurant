@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>Hello</div>
+  <div>Hello - {{ $t('welcome') }}</div>
 </template>
 
 <style scoped lang="less">
