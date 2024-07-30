@@ -27,5 +27,8 @@
     "vite": "^5.3.4",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.0.24"
+  },
+  "overrides": {
+    "eslint": "$eslint"
   }
 }
