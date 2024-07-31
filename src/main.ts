@@ -1,4 +1,4 @@
-import './style.css';
+import './assets/styles/global.less';
 
 import { createApp } from 'vue';
 
