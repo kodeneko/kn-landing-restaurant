@@ -1,14 +1,14 @@
-<script lang="ts">
+<script lang="ts" setup>
 </script>
 
 <template>
-  <div class="cont">
-    Home View
+  <div class="mainBarCont">
+    Contact Section
   </div>
 </template>
 
 <style lang="less" scoped>
-.cont {
+.mainBarCont {
   display: flex
 }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import MainBarComponent from '../components/MainBarComponent.vue';
-import MainFooterComponent from '../components/MainFooterComponent.vue';
+import MainBarComponent from '../components/main/MainBarComponent.vue';
+import MainFooterComponent from '../components/main/MainFooterComponent.vue';
 </script>
 
 <template>

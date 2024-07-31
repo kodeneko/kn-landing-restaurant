@@ -3,7 +3,7 @@
 import { createMemoryHistory, createRouter } from 'vue-router';
 
 import MainLayout from '../layout/MainLayout.vue';
-import HomeView from '../views/HomeView.vue';
+import HomeView from '../views/home/HomeView.vue';
 
 const routes = [
   {
