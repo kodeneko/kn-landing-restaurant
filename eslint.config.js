@@ -3,6 +3,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import jsonc from 'eslint-plugin-jsonc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sortKeys from 'eslint-plugin-sort-keys';
+import storybook from 'eslint-plugin-storybook';
 import pluginVue from 'eslint-plugin-vue';
 import globals from 'globals';
 import parserJsonc from 'jsonc-eslint-parser';
@@ -112,5 +113,12 @@ export default [
         }
       ]
     }
+  },
+
+  // Storybook
+  {
+    files: [ '**/*.{stories.ts}' ],
+    plugins: { storybook: storybook },
+    rules: { ...storybook.configs.recommended.rules }
   }
 ];

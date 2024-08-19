@@ -1,7 +1,9 @@
-import './style.css';
+import './assets/styles/global.less';
 
 import { createApp } from 'vue';
 
 import App from './App.vue';
+import i18n from './i18n';
+import router from './router/index';
 
-createApp(App).mount('#app');
+i18n(createApp(App).use(router)).mount('#app');
