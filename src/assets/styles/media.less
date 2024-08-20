@@ -1,0 +1,12 @@
+@units: 'px';
+
+@minWeb: 1280;
+@minTablet: 768;
+@minMobile: 360;
+
+@maxTablet: calc(@minWeb - 1);
+@maxMobile: calc(@minTablet - 1);
+
+@mediaWeb: ~"(min-width: @{minWeb}@{units})";
+@mediaTablet: ~"(min-width: @{minTablet}@{units}) and (max-width: @{maxTablet}@{units})";
+@mediaMobile: ~"(min-width: @{minMobile}@{units}) and (max-width: @{maxMobile}@{units})";

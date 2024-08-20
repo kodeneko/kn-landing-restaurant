@@ -1,5 +1,6 @@
 import eslintJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
+import parserTs from '@typescript-eslint/parser';
 import jsonc from 'eslint-plugin-jsonc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sortKeys from 'eslint-plugin-sort-keys';
@@ -37,11 +38,21 @@ export default [
     rules: {
       ...eslintJs.configs.recommended.rules,
       ...eslintTs.configs.recommended.rules,
+      'no-unused-vars': 'off',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
       'sort-imports': 'off',
       'sort-keys': 'error',
       'sort-keys/sort-keys-fix': 'error'
+    }
+  },
+
+  // Node config files
+  {
+    files: [ '**/vite.config.ts' ],
+    languageOptions: {
+      globals: { ...globals.node },
+      parser: parserTs
     }
   },
 
@@ -53,14 +64,20 @@ export default [
       ...stylistic.configs['all-flat'].rules,
       '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
       '@stylistic/array-element-newline': [ 'error', { minItems: 3 } ],
+      '@stylistic/brace-style': [
+        'error',
+        '1tbs',
+        { allowSingleLine: true }
+      ],
       '@stylistic/comma-spacing': [
         'error', {
           after: true,
           before: false
         }
       ],
+      '@stylistic/dot-location': [ 'error', 'property' ],
+      '@stylistic/function-call-argument-newline': [ 'error', 'consistent' ],
       '@stylistic/indent': [ 'error', 2 ],
-      '@stylistic/jsx-max-props-per-line': [ 1, { maximum: 2 } ],
       '@stylistic/linebreak-style': [ 'error', 'unix' ],
       '@stylistic/no-multi-spaces': 'error',
       '@stylistic/no-multiple-empty-lines': [
@@ -71,6 +88,12 @@ export default [
       ],
       '@stylistic/object-curly-newline': [ 'error', { multiline: true } ],
       '@stylistic/object-curly-spacing': [ 'error', 'always' ],
+      '@stylistic/padded-blocks': [
+        'error', {
+          blocks: 'never',
+          classes: 'always'
+        }
+      ],
       '@stylistic/quote-props': [ 'error', 'as-needed' ],
       '@stylistic/quotes': [ 'error', 'single' ]
     }

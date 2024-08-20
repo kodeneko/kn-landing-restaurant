@@ -1,8 +1,14 @@
-@import '../../../node_modules/reset-css/reset.css';
-@import './colors.less';
-@import './fonts.less';
+@import 'reset-css/reset.css';
+@import 'colors.less';
+@import 'fonts.less';
+@import 'media.less';
 
 :root {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+  color: @c-light;
+}
+
+body {
+  background-color: @c-dark;
 }
