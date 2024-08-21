@@ -15,8 +15,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
-    },
+    }
   },
+  decorators: [() => ({ template: '<div style="background-color: #170D09; padding: 2em;"><story /></div>' })],
 };
 
 export default preview;
