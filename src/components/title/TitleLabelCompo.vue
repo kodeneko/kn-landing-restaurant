@@ -1,58 +1,34 @@
 <script lang="ts"></script>
 
 <template>
-  <div class="logo-compo">
-    <div class="symbol">
-      <div class="symLeft"></div>
-      <div class="symRight"></div>
-      <div class="backCirc"></div>
-    </div>
-    <div class="title">
-      <div class="left"></div>
-      <div class="right"></div>
-    </div>
-  </div>
+  <span class="title-label-compo">
+    <span class="left">
+      <span class="r reverse">R</span>amen
+    </span>
+    <span class="right">
+      nema<span class="r">R</span>
+    </span>
+  </span>
 </template>
 
 <style lang="less" scoped>
+@import 'global.less';
 
-.logo-compo {
-  .symbol {
-    position: relative;
-    .symLeft, .symRight {
-      position: absolute;
-      content: 'R';
-      font-size: 72px;
-      font-family: 'Plus Jakarta Sans';
-      color: @c-light;
-      text-transform: uppercase;
-      top: calc(50% - 146px / 2);
-
-      &::before {
-        content: 'R';
-      }
-    }
-    .symLeft {
-      left: 0;
+.title-label-compo {
+  display: flex;
+  gap: 0.3em;
+  font-family: "Plus Jakarta Sans";
+  font-size: 3.25em;
+  color: @c-light;
+  font-weight: bold;
+  .left {
+    .reverse {
       transform: rotateY(180deg);
     }
-    .symRight {
-      right: 0;
-    }
-    .backCirc {
-      position: absolute;
-      height: 146px;
-      width: 146px;
-      border: 10px solid @c-light;
-    }
   }
-  .title {
-    .left {
-      
-    }
-    .right {
-      
-    }
+  .r {
+    display: inline-block;
+    text-transform: uppercase;
   }
 }
 </style>
