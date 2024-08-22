@@ -25,7 +25,7 @@ defineProps<{
 @import 'global.less';
 
 .title-compo {
-  ont-size: .7rem;
+  font-size: .7rem;
   width: fit-content;
   display: flex;
   flex-direction: column;
