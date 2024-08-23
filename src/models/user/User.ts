@@ -1,5 +1,5 @@
-import EnumLang from "./EnumLang"
-import EnumTheme from "./EnumTheme"
+import EnumLang from "./EnumLang";
+import EnumTheme from "./EnumTheme";
 
 interface User {
   lang: EnumLang;
