@@ -4,8 +4,8 @@
 @minTablet: 768;
 @minMobile: 360;
 
-@maxTablet: calc(@minWeb - 1);
-@maxMobile: calc(@minTablet - 1);
+@maxTablet: @minWeb - 1;
+@maxMobile: @minTablet - 1;
 
 @mediaWeb: ~"(min-width: @{minWeb}@{units})";
 @mediaTablet: ~"(min-width: @{minTablet}@{units}) and (max-width: @{maxTablet}@{units})";

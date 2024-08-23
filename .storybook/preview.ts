@@ -2,6 +2,7 @@ import { Preview, setup } from "@storybook/vue3";
 import initI18n from '../src/i18n'
 import '../src/icons/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import '../src/assets/styles/global.less';
 
 setup((app) => {
   app.component('fai', FontAwesomeIcon);
@@ -17,6 +18,7 @@ const preview: Preview = {
       },
     }
   },
+
   decorators: [() => ({ template: '<div style="background-color: #170D09; padding: 2em;"><story /></div>' })],
 };
 
