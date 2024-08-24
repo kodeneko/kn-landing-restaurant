@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 import { fn } from '@storybook/test';
 
 import MyHeader from './Header.vue';
+import { background } from 'storybook/internal/theming';
 
 const meta = {
   /* 👇 The title prop is optional.
@@ -20,6 +21,7 @@ const meta = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
+    backgrounds: { default: 'dark' },
   },
   args: {
     onLogin: fn(),
@@ -34,6 +36,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const LoggedIn: Story = {
+  parameters: {
+    background: 'red'
+  },
   args: {
     user: {
       name: 'Jane Doe',
