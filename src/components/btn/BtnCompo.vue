@@ -42,6 +42,12 @@ defineEmits<{
   color: @c-light;
   border-radius: 2.5rem;
   font-weight: bold;
+  transition: all .3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+  }
 
   &.line {
     border: .13rem solid @c-light;

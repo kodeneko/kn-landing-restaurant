@@ -3,7 +3,7 @@ import TitleLogoCompo from './TitleLogoCompo.vue';
 import TitleLabelCompo from './TitleLabelCompo.vue';
 
 defineProps<{
-  mainTitle: boolean
+  mainTitle?: boolean
 }>()
 </script>
 
@@ -25,7 +25,6 @@ defineProps<{
 @import 'global.less';
 
 .title-compo {
-  font-size: .7rem;
   width: fit-content;
   display: flex;
   flex-direction: column;

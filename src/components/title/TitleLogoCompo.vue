@@ -25,7 +25,7 @@
       color: @c-light;
       text-transform: uppercase;
       font-weight: bold;
-      top: 0.37em;
+      top: 0.46em;
 
       &::after {
         content: 'R';
