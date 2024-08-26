@@ -7,7 +7,8 @@ import { App } from 'vue';
 
 i18next.use(LanguageDetector).init({
   debug: true,
-  fallbacklLng: 'en',
+  lng: 'es',
+  fallbackLng: 'en',
   resources: {
     en: { translation: en },
     es: { translation: es }
