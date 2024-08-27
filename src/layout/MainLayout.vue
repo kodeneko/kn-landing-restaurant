@@ -5,9 +5,15 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
 
 <template>
   <div class="main-layout">
-    <div class="header"><MainBarComponent></MainBarComponent></div>
-    <div class="mainCont"><RouterView /></div>
-    <div class="footer"><MainFooterComponent /></div>
+    <div>
+      <div class="header"><MainBarComponent /></div>
+      <div class="mainCont"><RouterView /></div>
+    </div>
+    <div class="footer">
+      <div class="center">
+        <MainFooterComponent />
+      </div>
+    </div>
     <div class="back" />
   </div>
 </template>
@@ -21,6 +27,7 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
   background-image: url('back-05.jpg');
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   background-size: cover;
   background-position: 0 -15rem;
@@ -38,6 +45,7 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
   .header {
     z-index: 11;
     position: relative;
+    max-width: 1400px;
   }
 
   .mainCont {
@@ -49,7 +57,13 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
   .footer {
     z-index: 11;
     position: relative;
+    width: 100%;
+    background-color: @c-dark;
 
+    .center {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
   }
 }
 

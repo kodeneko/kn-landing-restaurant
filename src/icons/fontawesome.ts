@@ -1,6 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram, faTiktok, faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faCaretLeft, faCaretRight, faCircle, faGrimace, faHouse, faLocation, faMapLocationDot, faMinus, faMotorcycle } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCaretLeft, faCaretRight, faCircle, faGrimace, faHouse, faLocation, faLocationDot, faMapLocationDot, faMinus, faMotorcycle } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faMotorcycle,
@@ -16,5 +16,6 @@ library.add(
   faBars,
   faCaretLeft,
   faCaretRight,
-  faCircle
+  faCircle,
+  faLocationDot
 );

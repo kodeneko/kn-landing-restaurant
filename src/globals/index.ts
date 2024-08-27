@@ -1,4 +1,10 @@
 export {
+  mediaMobile,
+  mediaTablet,
+  mediaUnits,
+  mediaWeb
+} from './media';
+export {
   mainMenu,
   optContact,
   optDelivery,
