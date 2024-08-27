@@ -24,11 +24,13 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
         icon="fa-solid fa-location-dot" 
         size="md"
         :line="true"
+        :full="true"
       />
       <BtnCompo 
         label="Delivery"
         icon="fa-solid fa-motorcycle" 
         size="md"
+        :full="true"
       />
     </div>
     <div class="pic">
@@ -68,8 +70,10 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
     gap: 20px;
 
     li {
+      height: 48px;
+      width: 48px;
       .icon {
-        height: 42px;
+        height: 48px;
 
         &:hover {
           color: @c-red;
@@ -82,6 +86,7 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
     grid-area: desc;
     max-width: 530px;
     font-size: 32px;
+    padding-bottom: 20px;
   }
 
   .actions {
@@ -96,12 +101,13 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
     justify-self: end;
     img {
       height: 400px;
+      transform: rotateY(180deg);
     }
   }
 
 }
 
-@media @mediaTablet {
+@media @mediaTablet, @mediaMobile {
   .welcome-sec {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
@@ -111,9 +117,25 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
       "social"
       "actions"
     ;
+    justify-items: center;
+    padding: 20px;
+
+    .title {
+      text-align: center;
+    }
 
     .desc {
       display: none;
+      width: auto;
+    }
+
+    .pic {
+      justify-self: center;
+    }
+
+    .actions {
+      flex-direction: column;
+      width: 100%;
     }
   }
 }
