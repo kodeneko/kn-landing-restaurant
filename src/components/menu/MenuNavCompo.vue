@@ -1,14 +1,12 @@
 <script lang="ts" setup>
+import { Opt } from '@models/user';
+
 defineProps<{
-  selected: string;
-  opts: {
-    id: string;
-    label: string;
-    href: string;
-  }[]
+  selected: Opt;
+  opts: Opt[]
 }>();
 defineEmits<{
-  click: [id: string]
+  click: [opt: Opt]
 }>();
 </script>
 
@@ -17,10 +15,10 @@ defineEmits<{
     <li
       v-for="opt in opts"
       :key="opt.id"
-      :on-click="$emit('click', opt.id)"  
+      :on-click="$emit('click', opt)"  
     >
       <a 
-        :class="{opt: true, selected: selected === opt.id}"
+        :class="{opt: true, selected: selected.id === opt.id}"
         :href="opt.href" 
       >{{ opt.label }}
       </a>

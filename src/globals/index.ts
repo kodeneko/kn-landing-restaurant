@@ -8,8 +8,15 @@ export {
   mainMenu,
   optContact,
   optDelivery,
+  optDessert,
+  optDonburi,
+  optDrinks,
   optLocation,
-  optMenu
+  optMenu,
+  optRamen,
+  optStarters,
+  restDefaultSelOpt,
+  restMenu
 } from './menu';
 export {
   optInsta,
