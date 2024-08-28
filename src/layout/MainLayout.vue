@@ -1,16 +1,24 @@
 <script lang="ts" setup>
+import { useMediaMobile, useMediaTablet } from '@hooks/useMedia';
 import MainBarComponent from '../components/main/MainBarComponent.vue';
 import MainFooterComponent from '../components/main/MainFooterComponent.vue';
+import MainBarMobileComponent from '@components/main/MainBarMobileComponent.vue';
+
+const isTablet = useMediaTablet();
+const isMobile = useMediaMobile();
 </script>
 
 <template>
   <div class="main-layout">
-    <div>
-      <div class="header"><MainBarComponent /></div>
-      <div class="mainCont"><RouterView /></div>
+    <div class="header">
+      <MainBarMobileComponent v-if="isTablet || isMobile" />
+      <MainBarComponent v-else />
+    </div>
+    <div class="mainCont">
+      <RouterView />
     </div>
     <div class="footer">
-      <div class="center">
+      <div class="cont">
         <MainFooterComponent />
       </div>
     </div>
@@ -33,6 +41,23 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
   background-position: 0 -15rem;
   background-attachment: fixed;
 
+
+  .header {
+    width: 100%;
+    max-width: 1400px;
+    z-index: 11;
+    position: relative;
+  }
+
+  .mainCont {
+    width: 100%;
+    max-width: 1400px;
+    z-index: 11;
+    position: relative;
+    flex-grow: 1;
+  }
+  
+
   .back {
     position: absolute;
     z-index: 10;
@@ -42,27 +67,20 @@ import MainFooterComponent from '../components/main/MainFooterComponent.vue';
     height: 100%;
   }
 
-  .header {
-    z-index: 11;
-    position: relative;
-    max-width: 1400px;
-  }
-
-  .mainCont {
-    z-index: 11;
-    position: relative;
-    flex-grow: 1;
-  }
-
   .footer {
-    z-index: 11;
-    position: relative;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: @c-dark;
+    width: 100%;
 
-    .center {
+    .cont {
+      z-index: 11;
       max-width: 1400px;
-      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      width: 100%;
+      background-color: @c-dark;
     }
   }
 }
