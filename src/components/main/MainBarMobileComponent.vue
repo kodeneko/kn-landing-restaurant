@@ -11,7 +11,7 @@ import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
     <div class="right">
       <BtnIconCompo 
         icon="fa-solid fa-bars" 
-        size="md" 
+        size="sm" 
       />
     </div>
   </div>
@@ -23,10 +23,10 @@ import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
 .main-bar-mobile {
   display: flex;
   align-items: start;
-  padding: 20px;
+  padding: 1.25rem;
 
   .left {
-    font-size: 8px;
+    font-size: 0.38rem;
   }
 
   .right {
