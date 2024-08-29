@@ -47,7 +47,7 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto auto;
   padding: 2.5rem;
-  padding-bottom: 2.75rem;
+  padding-bottom: 8.75rem;
   row-gap: 1.25rem;
   grid-template-areas: 
     "title pic"

@@ -16,11 +16,13 @@ const dishes = ref<Dish[]>(restDefaultDishes)
 <template>
   <div class="menu-card-sec">
     <TitleSecCompo>Menu</TitleSecCompo>
-    <MenuNavCompo 
-      :selected="selected" 
-      :opts="restMenu"
-      :click="(opt: Opt) => selected = opt"
-    />
+    <div class="menu-wrap">
+      <MenuNavCompo 
+        :selected="selected" 
+        :opts="restMenu"
+        :click="(opt: Opt) => selected = opt"
+      />
+    </div>
     <ul class="gallery">
       <li 
         v-for="dish in dishes"
@@ -37,8 +39,40 @@ const dishes = ref<Dish[]>(restDefaultDishes)
 </template>
 
 <style lang="less" scoped>
+@import url('global.less');
+
 .menu-card-sec {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  padding: 2.5rem;
+
+  .menu-wrap {
+    overflow-x: hidden;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 40px;
+
+    li {
+      flex-basis: 250px;
+    }
+  }
+}
+
+@media @mediaTablet, @mediaMobile {
+
+  .menu-card-sec {
+
+    .gallery {
+
+      flex-wrap:nowrap;
+
+    }
+  }
+
 }
 </style>
