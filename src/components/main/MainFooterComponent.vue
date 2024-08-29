@@ -49,15 +49,17 @@ import { socialList } from '@globals/social';
   justify-content: space-between;
   background-color: @c-dark;
   padding: 40px;
+  font-size: 28px;
 
   .left {
+    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 
     .logo {
-      font-size: .3rem;
+      font-size: .5rem;
     }
 
     .social {
@@ -68,7 +70,7 @@ import { socialList } from '@globals/social';
         .icon-link {
           transition: all .3s;
           .icon {
-            height: 18px;
+            height: 32px;
           }
           &:hover {
             cursor: pointer;
@@ -80,13 +82,17 @@ import { socialList } from '@globals/social';
   }
 
   .center {
+    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    line-height: 38px;
   }
 
   .right {
+    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,6 +117,20 @@ import { socialList } from '@globals/social';
             transform: translateX(-4px);
           }
         }
+      }
+    }
+  }
+}
+
+@media @mediaTablet, @mediaMobile {
+  .main-footer {
+
+    flex-direction: column;
+    gap: 40px;
+
+    .right {
+      .list {
+        align-items: center;
       }
     }
   }
