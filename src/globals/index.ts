@@ -1,4 +1,12 @@
 export {
+  dishesDessert,
+  dishesDonburi,
+  dishesDrinks,
+  dishesRamen,
+  dishesStarters,
+  restDefaultDishes
+} from './dish';
+export {
   mediaMobile,
   mediaTablet,
   mediaUnits,
