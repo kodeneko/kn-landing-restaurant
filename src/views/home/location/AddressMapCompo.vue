@@ -54,6 +54,7 @@ import ListIconInfoCompo from '@components/text/ListIconInfoCompo.vue'
 .address-map {
   border-radius: 20px;
   max-width: 1000px;
+  width: 100%;
   display: flex;
   box-shadow: @shadow-black;
 

@@ -1,8 +1,16 @@
 <script lang="ts" setup>
+defineProps<{
+  center?: boolean
+}>();
 </script>
 
 <template>
-  <h2 class="title-sec-compo">
+  <h2 
+    :class="[
+      'title-sec-compo',
+      center && 'center'
+    ]"
+  >
     <slot>Fallback</slot>
   </h2>
 </template>
@@ -16,6 +24,10 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.center {
+    text-align: center;
+  }
 
 @media @mediaTablet, @mediaMobile {
   .title-sec-compo {

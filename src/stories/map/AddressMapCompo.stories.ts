@@ -1,6 +1,6 @@
 
 import type { Meta, StoryObj } from '@storybook/vue3';
-import AdressMapCompo from '@components/map/AdressMapCompo.vue';
+import AdressMapCompo from 'src/views/home/location/AddressMapCompo.vue';
 
 const meta = {
   title: 'Map/Adress',

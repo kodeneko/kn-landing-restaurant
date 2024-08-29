@@ -68,9 +68,7 @@ const dishes = ref<Dish[]>(restDefaultDishes)
   .menu-card-sec {
 
     .gallery {
-
       flex-wrap:nowrap;
-
     }
   }
 
