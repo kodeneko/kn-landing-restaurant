@@ -3,6 +3,7 @@ import WelcomeSec from './welcome/WelcomeSec.vue'
 import MenuCardSec from './menu-card/MenuCardSec.vue'
 import LocationSection from './location/LocationSection.vue';
 import DeliverySection from './delivery/DeliverySection.vue';
+import ContactSection from './contact-section/ContactSection.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import DeliverySection from './delivery/DeliverySection.vue';
     <MenuCardSec />
     <LocationSection />
     <DeliverySection />
+    <ContactSection />
   </div>
 </template>
 

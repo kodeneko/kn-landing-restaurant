@@ -9,13 +9,13 @@ const model = defineModel<string>();
 <template>
   <input 
     v-if="!textarea"
-    class="field"
+    :class="['field', 'input']"
     v-model="model"
     :placeholder="placeH"
   />
   <textarea
     v-else
-    class="field"
+    :class="['field', 'textarea']"
     v-model="model"
     :placeholder="placeH"
   ></textarea>
@@ -25,7 +25,6 @@ const model = defineModel<string>();
 @import 'global.less';
 
 .field {
-  width: 100%;
   background-color: transparent;
   border: 0.06rem solid @c-red;
   border-radius: 1.25rem;
@@ -37,5 +36,13 @@ const model = defineModel<string>();
     font-style: italic;
     color: @c-red;
   }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.textarea {
+  height: 100%;
 }
 </style>

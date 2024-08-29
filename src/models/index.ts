@@ -7,3 +7,4 @@ export type {
   Opt,
   Menu } from './user';
 export type { default as Dish } from './Dish'
+export type { default as Contact} from './Contact'
