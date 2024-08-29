@@ -80,10 +80,5 @@ defineEmits<{
     width: auto;
   }
 
-  .icon-wrap {
-    .icon {
-      font-size: 2.25rem;
-    }
-  }
 }
 </style>
