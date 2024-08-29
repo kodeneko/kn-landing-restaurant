@@ -1,5 +1,6 @@
 import './assets/styles/global.less';
 import './icons/fontawesome';
+import './i18n';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createApp } from 'vue';

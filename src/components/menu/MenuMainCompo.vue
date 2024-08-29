@@ -24,13 +24,32 @@ defineEmits<{
 
 .menu-main {
   display: flex;
-  gap: 60px;
-  .opt a {
-    color: @c-light;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
+
+  .opt {
+    a {
+      color: @c-light;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 30px;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: @c-light;
+        text-underline-offset: 8px;
+        text-decoration-thickness: 1px;
+      }
+    }
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &:last-child a {
+      padding-right: 0;
+    }
   }
 }
 </style>

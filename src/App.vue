@@ -8,5 +8,5 @@
 </template>
 
 <style scoped lang="less">
-@import 'globals.less'
+@import 'global.less';
 </style>

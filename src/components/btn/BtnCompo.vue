@@ -4,6 +4,7 @@ defineProps<{
   icon?: string;
   size?: "md" | "sm";
   line?: boolean;
+  full?: boolean;
 }>();
 defineEmits<{
   click
@@ -15,7 +16,8 @@ defineEmits<{
     :class="[
       'btn',
       size ?? 'md',
-      line ? 'line' : 'solid'
+      line ? 'line' : 'solid',
+      full ? 'full' : 'srink'
     ]"
     :on-click="$emit('click')"
   >
@@ -70,10 +72,13 @@ defineEmits<{
     padding: 0.63rem 1.25rem;
   }
 
-  .icon-wrap {
-    .icon {
-      font-size: 2.25rem;
-    }
+  &.full {
+    width: 100%;
   }
+
+  &.srink {
+    width: auto;
+  }
+
 }
 </style>

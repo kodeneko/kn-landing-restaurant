@@ -1,10 +1,9 @@
 <script lang="ts" setup>
+import Dish from '@models/Dish';
+
 defineProps<{
-  title: string;
-  pic: string;
-  desc: string;
-  price: number;
-  symbol: string;
+  dish: Dish,
+  symbol: string
 }>();
 </script>
 
@@ -13,16 +12,16 @@ defineProps<{
     <div class="cont">
       <img 
         class="pic" 
-        :src="pic"
+        :src="dish.pic"
       />
       <h3 class="title">
-        {{ title }}
+        {{ dish.title }}
       </h3>
       <p class="desc">
-        {{ desc }}
+        {{ dish.desc }}
       </p>
       <div class="price">
-        <span>{{ price }}</span>
+        <span>{{ dish.price }}</span>
         <span>{{ symbol }}</span>
       </div>
     </div>

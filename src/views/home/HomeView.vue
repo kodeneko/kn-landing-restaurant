@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import InitSection from './InitSection.vue'
-import MenuCardSection from './menu-card-section/MenuCardSection.vue'
-import LocationSection from './location-section/LocationSection.vue'
-import DeliverySection from './DeliverySection.vue'
-import ContactSection from './contact-section/ContactSection.vue'
+import WelcomeSec from './welcome/WelcomeSec.vue'
+import MenuCardSec from './menu-card/MenuCardSec.vue'
+import LocationSection from './location/LocationSection.vue';
+import DeliverySection from './delivery/DeliverySection.vue';
+import ContactSection from './contact-section/ContactSection.vue';
 </script>
 
 <template>
   <div class="cont">
-    <InitSection />
-    <MenuCardSection />
+    <WelcomeSec />
+    <MenuCardSec />
     <LocationSection />
     <DeliverySection />
     <ContactSection />
@@ -20,5 +20,6 @@ import ContactSection from './contact-section/ContactSection.vue'
 .cont {
   display: flex;
   flex-direction: column;
+
 }
 </style>
