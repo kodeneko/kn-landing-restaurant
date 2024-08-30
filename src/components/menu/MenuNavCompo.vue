@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import GalleryDragCompo from '@components/list/GalleryDragCompo.vue';
 import { Opt } from '@models/user';
 
 defineProps<{
@@ -11,19 +12,21 @@ defineEmits<{
 </script>
 
 <template>
-  <ul class="menu-main">
-    <li
-      v-for="opt in opts"
-      :key="opt.id"
-      :on-click="$emit('click', opt)"  
-    >
-      <a 
-        :class="{opt: true, selected: selected.id === opt.id}"
-        :href="opt.href" 
-      >{{ opt.label }}
-      </a>
-    </li>
-  </ul>
+  <GalleryDragCompo>
+    <ul class="menu-main">
+      <li
+        v-for="opt in opts"
+        :key="opt.id"
+        :on-click="$emit('click', opt)"  
+      >
+        <a 
+          :class="{opt: true, selected: selected.id === opt.id}"
+          :href="opt.href" 
+        >{{ opt.label }}
+        </a>
+      </li>
+    </ul>
+  </GalleryDragCompo>
 </template>
 
 <style lang="less" scoped>
@@ -32,6 +35,7 @@ defineEmits<{
 .menu-main {
   display: flex;
   gap: 20px;
+
   .opt {
     border-radius: 40px;
     background-color: @c-red-trans;

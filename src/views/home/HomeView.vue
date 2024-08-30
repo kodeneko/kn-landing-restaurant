@@ -20,6 +20,5 @@ import ContactSection from './contact-section/ContactSection.vue';
 .cont {
   display: flex;
   flex-direction: column;
-
 }
 </style>

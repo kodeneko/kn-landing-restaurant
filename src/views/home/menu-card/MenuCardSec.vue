@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import CardDishCompo from '@components/card/CardDishCompo.vue';
+import GalleryDragCompo from '@components/list/GalleryDragCompo.vue';
 import MenuNavCompo from '@components/menu/MenuNavCompo.vue';
 import TitleSecCompo from '@components/text/TitleSecCompo.vue';
 import { restDefaultDishes } from '@globals/dish';
@@ -10,7 +11,6 @@ import { ref } from 'vue';
 
 const selected = ref<Opt>(restDefaultSelOpt as Opt);
 const dishes = ref<Dish[]>(restDefaultDishes)
-
 </script>
 
 <template>
@@ -23,18 +23,22 @@ const dishes = ref<Dish[]>(restDefaultDishes)
         :click="(opt: Opt) => selected = opt"
       />
     </div>
-    <ul class="gallery">
-      <li 
-        v-for="dish in dishes"
-        :key="dish.id"
+    <GalleryDragCompo>
+      <ul 
         class="gallery"
       >
-        <CardDishCompo 
-          :dish="dish" 
-          symbol="€" 
-        />
-      </li>
-    </ul>
+        <li 
+          v-for="dish in dishes"
+          :key="dish.id"
+          class="gallery"
+        >
+          <CardDishCompo 
+            :dish="dish" 
+            symbol="€" 
+          />
+        </li>
+      </ul>
+    </GalleryDragCompo>
   </div>
 </template>
 
@@ -46,10 +50,6 @@ const dishes = ref<Dish[]>(restDefaultDishes)
   flex-direction: column;
   gap: 40px;
   padding: 2.5rem;
-
-  .menu-wrap {
-    overflow-x: hidden;
-  }
 
   .gallery {
     display: flex;
@@ -66,9 +66,8 @@ const dishes = ref<Dish[]>(restDefaultDishes)
 @media @mediaTablet, @mediaMobile {
 
   .menu-card-sec {
-
     .gallery {
-      flex-wrap:nowrap;
+      flex-wrap: nowrap;
     }
   }
 
