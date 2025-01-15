@@ -1,10 +1,10 @@
 # KN Landing Restaurant
 
 This project is a single page about a fictional Restaurant 🍜 It's only for showcase porpouse 🖼️🪟📕
+
 ---
 
 - [KN Landing Restaurant](#kn-landing-restaurant)
-  - [This project is a single page about a fictional Restaurant 🍜 It's only for showcase porpouse 🖼️🪟📕](#this-project-is-a-single-page-about-a-fictional-restaurant--its-only-for-showcase-porpouse-️)
   - [🗒️ 1. Description](#️-1-description)
   - [🛠️ 2. Technologies](#️-2-technologies)
   - [🖥️ 3. Deploy](#️-3-deploy)
