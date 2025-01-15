@@ -1,5 +1,42 @@
-# Vue 3 + TypeScript + Vite
+# KN Landing Restaurant
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project is a single page about a fictional Restaurant 🍜 It's only for showcase porpouse 🖼️🪟📕
+---
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+- [KN Landing Restaurant](#kn-landing-restaurant)
+  - [This project is a single page about a fictional Restaurant 🍜 It's only for showcase porpouse 🖼️🪟📕](#this-project-is-a-single-page-about-a-fictional-restaurant--its-only-for-showcase-porpouse-️)
+  - [🗒️ 1. Description](#️-1-description)
+  - [🛠️ 2. Technologies](#️-2-technologies)
+  - [🖥️ 3. Deploy](#️-3-deploy)
+  - [🤝 4. Contribution](#-4-contribution)
+
+---
+
+## 🗒️ 1. Description
+
+You can see a front-end project made by Vue. It's only a one page with a huge scroll. It's a fictional oriental restaurant 🍜 You can see the menu and location
+
+## 🛠️ 2. Technologies
+
+Func ⚙️ | Tech 🛠️
+---|---
+Front-end | Vue
+Build | Vite
+Pack Manager | npm
+Store | Pinia
+i18n | i18next
+Routing | Vue Router 
+Gallery Compo | Storybook
+REST Calls | Axios
+Icons | Font Awesome
+
+
+## 🖥️ 3. Deploy
+
+```bash
+npm run dev
+```
+
+## 🤝 4. Contribution
+
+If you want to suggest some improvement or inform about a bug, you are welcome 👍 Make an issue and we review it together ✨
