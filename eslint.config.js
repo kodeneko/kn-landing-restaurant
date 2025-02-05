@@ -15,7 +15,7 @@ export default [
 
   // Json - Jsonc - Json5
   {
-    files: [ '**/*.{json,jsonc}' ],
+    files: ['**/*.{json,jsonc}'],
     languageOptions: { parser: parserJsonc },
     plugins: { jsonc },
     rules: {
@@ -30,7 +30,7 @@ export default [
 
   // Javascript & Typescript
   {
-    files: [ '**/*.{js,jsx,ts,tsx}' ],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: {
       'simple-import-sort': simpleImportSort,
       'sort-keys': sortKeys
@@ -49,7 +49,7 @@ export default [
 
   // Node config files
   {
-    files: [ '**/vite.config.ts' ],
+    files: ['**/vite.config.ts'],
     languageOptions: {
       globals: { ...globals.node },
       parser: parserTs
@@ -58,12 +58,12 @@ export default [
 
   // Stylistic
   {
-    files: [ '**/*.{js,jsx,ts,tsx}' ],
+    files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: { '@stylistic': stylistic },
     rules: {
       ...stylistic.configs['all-flat'].rules,
-      '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
-      '@stylistic/array-element-newline': [ 'error', { minItems: 3 } ],
+      // '@stylistic/array-bracket-spacing': ['error', 'always'],
+      '@stylistic/array-element-newline': ['error', { minItems: 3 }],
       '@stylistic/brace-style': [
         'error',
         '1tbs',
@@ -75,10 +75,11 @@ export default [
           before: false
         }
       ],
-      '@stylistic/dot-location': [ 'error', 'property' ],
-      '@stylistic/function-call-argument-newline': [ 'error', 'consistent' ],
-      '@stylistic/indent': [ 'error', 2 ],
-      '@stylistic/linebreak-style': [ 'error', 'unix' ],
+      '@stylistic/dot-location': ['error', 'property'],
+      '@stylistic/function-call-argument-newline': ['error', 'consistent'],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/jsx-max-props-per-line': [1, { maximum: 2 }],
+      '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/no-multi-spaces': 'error',
       '@stylistic/no-multiple-empty-lines': [
         'error', {
@@ -86,22 +87,22 @@ export default [
           maxBOF: 1
         }
       ],
-      '@stylistic/object-curly-newline': [ 'error', { multiline: true } ],
-      '@stylistic/object-curly-spacing': [ 'error', 'always' ],
+      '@stylistic/object-curly-newline': ['error', { multiline: true }],
+      '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/padded-blocks': [
         'error', {
           blocks: 'never',
           classes: 'always'
         }
       ],
-      '@stylistic/quote-props': [ 'error', 'as-needed' ],
-      '@stylistic/quotes': [ 'error', 'single' ]
+      '@stylistic/quote-props': ['error', 'as-needed'],
+      '@stylistic/quotes': ['error', 'single']
     }
   },
 
   // Vue
   {
-    files: [ '**/*.vue' ],
+    files: ['**/*.vue'],
     languageOptions: {
       globals: globals.browser,
       parser: vueEslintParser,
@@ -140,7 +141,7 @@ export default [
 
   // Storybook
   {
-    files: [ '**/*.{stories.ts}' ],
+    files: ['**/*.{stories.ts}'],
     plugins: { storybook: storybook },
     rules: { ...storybook.configs.recommended.rules }
   }

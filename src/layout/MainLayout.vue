@@ -40,7 +40,7 @@ const isMobile = useMediaMobile();
   background-size: cover;
   background-position: 0 -15rem;
   background-attachment: fixed;
-
+  overflow: hidden;
 
   .header {
     width: 100%;
