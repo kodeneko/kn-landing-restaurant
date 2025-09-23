@@ -5,6 +5,7 @@ import FieldCompo from '@components/form/FieldCompo.vue';
 import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
 import { ref } from 'vue';
+import { motion as m, stagger } from "motion-v";
 
 const isMobile = useMediaMobile();
 const getSize = () => isMobile.value ? 'sm' : 'md'
@@ -18,16 +19,57 @@ const contact = ref<Contact>({
 <template>
   <div class="contact-section">
 
-    <div class="header">
+    <m.div 
+      class="header"
+      :initial="{
+        opacity: 0
+      }"
+      :while-in-view="{
+        opacity: 1
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
       <h2 class="title">We Hear You!</h2>
       <p class="sub">Questions, suggestions, critics, congrats, offers...</p>
-    </div>
+    </m.div>
 
     <div class="content">
-      <div class="left">
+      <m.div 
+        class="left"
+        :initial="{
+          opacity: 0,
+          x: -100
+        }"
+        :animate="{
+          opacity: 1,
+          x: 0
+        }"
+        :transition="{
+          delay: 0.3,
+          duration: 0.7
+        }"
+      >
         <img :src="pic" />
-      </div>
-      <div class="right">
+      </m.div>
+      <m.div 
+        class="right"
+        :initial="{
+          opacity: 0,
+          x: 100
+        }"
+        :animate="{
+          opacity: 1,
+          x: 0
+        }"
+        :transition="{
+          delay: 0.3,
+          duration: 0.7
+        }"
+      >
         <form class="form-contact">
           <FieldCompo 
             v-model="contact.name" 
@@ -54,7 +96,7 @@ const contact = ref<Contact>({
             />
           </div>
         </div>
-      </div>
+      </m.div>
     </div>
 
   </div>

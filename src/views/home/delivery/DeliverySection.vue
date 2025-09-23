@@ -2,22 +2,64 @@
 import pic from '@assets/pics/rider.png'
 import BtnCompo from '@components/btn/BtnCompo.vue';
 import { useMediaMobile } from '@hooks/useMedia';
+import { motion as m, stagger } from "motion-v";
 
 const isMobile = useMediaMobile();
-const sizeBtns = () => isMobile ? 'sm' : 'md'
+const sizeBtns = () => isMobile ? 'sm' : 'md';
+
+const varFather = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { delayChildren: stagger(0.5, { startDelay: 0.3 }) },
+  }
+};
+const varChild = {
+  hidden: { opacity: 0, y: 100 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+};
 </script>
 
 <template>
   <div class="delivery-section">
-    <div class="left">
+    <m.div 
+      class="left"
+      :initial="{
+        opacity: 0,
+        x: -100
+      }"
+      :while-in-view="{
+        opacity: 1,
+        x: 0
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
       <img 
         class="pic" 
         :src="pic" 
       />
-    </div>
-    <div class="right">
-      <h2 class="title">Delivery Available!</h2>
-      <div class="actions">
+    </m.div>
+    <m.div 
+      class="right" 
+      while-in-view="show" 
+      initial="hidden" 
+      :variants="varFather" 
+      :inViewOptions="{ once: true, amount: 'some' }"
+    >
+      <m.h2 
+        class="title"
+        :variants="varChild"
+      >
+        Delivery Available!
+      </m.h2>
+      <m.div 
+        class="actions"
+        :variants="varChild"
+      >
         <BtnCompo 
           label="Just Eat" 
           icon="fa-solid fa-house" 
@@ -30,8 +72,8 @@ const sizeBtns = () => isMobile ? 'sm' : 'md'
           :size="sizeBtns()" 
           :full="true"  
         />
-      </div>
-    </div>
+      </m.div>
+    </m.div>
   </div>
 </template>
 
