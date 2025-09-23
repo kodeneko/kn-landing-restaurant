@@ -20,7 +20,6 @@ defineProps<{
 
 .title-sec-compo {
   font-size: 3.25rem;
-  color: @c-light;
   text-transform: uppercase;
   font-weight: bold;
 }
