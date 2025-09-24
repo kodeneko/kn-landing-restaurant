@@ -3,6 +3,7 @@ import { useMediaMobile, useMediaTablet } from '@hooks/useMedia';
 import MainBarComponent from '../components/main/MainBarComponent.vue';
 import MainFooterComponent from '../components/main/MainFooterComponent.vue';
 import MainBarMobileComponent from '@components/main/MainBarMobileComponent.vue';
+import { motion as m } from "motion-v";
 
 const isTablet = useMediaTablet();
 const isMobile = useMediaMobile();
@@ -17,11 +18,26 @@ const isMobile = useMediaMobile();
     <div class="mainCont">
       <RouterView />
     </div>
-    <div class="footer">
+    <m.div 
+      class="footer"
+      :initial="{
+        opacity: 0,
+        y: 100
+      }"
+      :while-in-view="{
+        opacity: 1
+        , y: 0
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
       <div class="cont">
         <MainFooterComponent />
       </div>
-    </div>
+    </m.div>
     <div class="back" />
   </div>
 </template>
