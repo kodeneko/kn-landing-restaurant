@@ -6,4 +6,4 @@ interface Dish {
   price: number;
 }
 
-export default Dish
+export default Dish;

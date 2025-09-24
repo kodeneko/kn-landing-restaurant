@@ -8,15 +8,11 @@ const wrapper = mount(MainBarComponent);
 describe(
   'describe',
   () => {
-
     it(
       'testing GuessAge component props',
       async () => {
-
         expect(2).toBe(2);
-
       }
     );
-
   }
 );

@@ -1,23 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
 import InfoEleCompo from '@components/text/InfoEleCompo.vue';
+import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Text/Info Element',
-  component: InfoEleCompo,
-  parameters: {
-    layout: 'fullscreen',
-  },
   args: {
-    label: 'Address',
-    info: 'C/Abedul 15, Alicante'
+    info: 'C/Abedul 15, Alicante',
+    label: 'Address'
   },
-  tags: ['autodocs'],
+  component: InfoEleCompo,
   decorators: [() => ({ template: '<div style="background-color: #170D09; padding: 2em;"><story /></div>' })],
+  parameters: { layout: 'fullscreen' },
+  tags: ['autodocs'],
+  title: 'Text/Info Element'
 } satisfies Meta<typeof InfoEleCompo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {}
-};
+export const Default: Story = { args: {} };

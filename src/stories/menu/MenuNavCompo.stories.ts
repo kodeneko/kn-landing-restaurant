@@ -1,30 +1,46 @@
 
-import type { Meta, StoryObj } from '@storybook/vue3';
 import MenuNavCompo from '@components/menu/MenuNavCompo.vue';
+import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Menu/Nav',
-  component: MenuNavCompo,
-  parameters: {
-    layout: 'fullscreen',
-  },
   args: {
-    selected: 'ramen',
     opts: [
-      { id: 'starters', label: 'Starters', href: '#starters' },
-      { id: 'ramen', label: 'Ramen', href: '#ramen' },
-      { id: 'donburi', label: 'Donburi', href: '#donburi' },
-      { id: 'dessert', label: 'Dessert', href: '#dessert' },
-      { id: 'drinks', label: 'Drinks', href: '#drinks'}
-    ]
+      {
+        href: '#starters',
+        id: 'starters',
+        label: 'Starters'
+      },
+      {
+        href: '#ramen',
+        id: 'ramen',
+        label: 'Ramen'
+      },
+      {
+        href: '#donburi',
+        id: 'donburi',
+        label: 'Donburi'
+      },
+      {
+        href: '#dessert',
+        id: 'dessert',
+        label: 'Dessert'
+      },
+      {
+        href: '#drinks',
+        id: 'drinks',
+        label: 'Drinks'
+      }
+    ],
+    selected: 'ramen'
   },
-  tags: ['autodocs'],
+  component: MenuNavCompo,
   decorators: [() => ({ template: '<div style="background-color: #170D09; padding: 2em;"><story /></div>' })],
+  parameters: { layout: 'fullscreen' },
+  tags: ['autodocs'],
+  title: 'Menu/Nav'
 } satisfies Meta<typeof MenuNavCompo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {}
-};
+export const Default: Story = { args: {} };

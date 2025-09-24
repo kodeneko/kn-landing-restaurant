@@ -1,20 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
 import TitleLabelCompo from '@components/title/TitleLabelCompo.vue';
+import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Title/Label',
-  component: TitleLabelCompo,
-  parameters: {
-    layout: 'fullscreen',
-  },
   args: {},
-  tags: ['autodocs'],
+  component: TitleLabelCompo,
   decorators: [() => ({ template: '<div style="background-color: #170D09; padding: 2em;"><story /></div>' })],
+  parameters: { layout: 'fullscreen' },
+  tags: ['autodocs'],
+  title: 'Title/Label'
 } satisfies Meta<typeof TitleLabelCompo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {}
-};
+export const Default: Story = { args: {} };

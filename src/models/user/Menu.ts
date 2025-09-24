@@ -8,6 +8,6 @@ interface Opt {
 type Menu = Opt[];
 
 export type {
-  Opt,
-  Menu
-}
+  Menu,
+  Opt
+};

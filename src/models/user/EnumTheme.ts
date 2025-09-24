@@ -3,4 +3,4 @@ enum EnumTheme {
   LIGHT = 'light'
 }
 
-export default EnumTheme
+export default EnumTheme;

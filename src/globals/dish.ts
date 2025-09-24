@@ -1,258 +1,258 @@
-import Dish from "@models/Dish";
-import { t } from "i18next";
+import Dish from '@models/Dish';
+import { t } from 'i18next';
 
-const picFolder = 'dishes/'
+const picFolder = 'dishes/';
 
 // STARTERS
 
 const starterWakame: Dish = {
-  id: 'starterWakame',
-  title: t('dish.starterWakame.title'),
   desc: t('dish.starterWakame.desc'),
+  id: 'starterWakame',
   pic: picFolder + 'starter-wakame.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterWakame.title')
 };
 const starterYakitori: Dish = {
-  id: 'starterYakitori',
-  title: t('dish.starterYakitori.title'),
   desc: t('dish.starterYakitori.desc'),
+  id: 'starterYakitori',
   pic: picFolder + 'starter-yakitori.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterYakitori.title')
 };
 const starterBao: Dish = {
-  id: 'starterBao',
-  title: t('dish.starterBao.title'),
   desc: t('dish.starterBao.desc'),
+  id: 'starterBao',
   pic: picFolder + 'starter-bao.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterBao.title')
 };
 const starterGyoza: Dish = {
-  id: 'starterGyoza',
-  title: t('dish.starterGyoza.title'),
   desc: t('dish.starterGyoza.desc'),
+  id: 'starterGyoza',
   pic: picFolder + 'starter-gyoza.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterGyoza.title')
 };
 const starterTempura: Dish = {
-  id: 'starterTempura',
-  title: t('dish.starterTempura.title'),
   desc: t('dish.starterTempura.desc'),
+  id: 'starterTempura',
   pic: picFolder + 'starter-tempura.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterTempura.title')
 };
 const starterKorokke: Dish = {
-  id: 'starterKorokke',
-  title: t('dish.starterKorokke.title'),
   desc: t('dish.starterKorokke.desc'),
+  id: 'starterKorokke',
   pic: picFolder + 'starter-korokke.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterKorokke.title')
 };
 const starterEkonomiyaki: Dish = {
-  id: 'starterEkonomiyaki',
-  title: t('dish.starterEkonomiyaki.title'),
   desc: t('dish.starterEkonomiyaki.desc'),
+  id: 'starterEkonomiyaki',
   pic: picFolder + 'starter-ekonomiyaki.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterEkonomiyaki.title')
 };
 const starterShrimps: Dish = {
-  id: 'starterShrimps',
-  title: t('dish.starterShrimps.title'),
   desc: t('dish.starterShrimps.desc'),
+  id: 'starterShrimps',
   pic: picFolder + 'starter-shrimps.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterShrimps.title')
 };
 const starterTokoyaki: Dish = {
-  id: 'starterTokoyaki',
-  title: t('dish.starterTokoyaki.title'),
   desc: t('dish.starterTokoyaki.desc'),
+  id: 'starterTokoyaki',
   pic: picFolder + 'starter-shritokoyakimps.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.starterTokoyaki.title')
 };
 
 // RAMEN
 
 const ramenBeef: Dish = {
-  id: 'ramenBeef',
-  title: t('dish.ramenBeef.title'),
   desc: t('dish.ramenBeef.desc'),
+  id: 'ramenBeef',
   pic: picFolder + 'ramen-beef.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenBeef.title')
 };
 const ramenCurry: Dish = {
-  id: 'ramenCurry',
-  title: t('dish.ramenCurry.title'),
   desc: t('dish.ramenCurry.desc'),
+  id: 'ramenCurry',
   pic: picFolder + 'ramen-curry.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenCurry.title')
 };
 const ramenKids: Dish = {
-  id: 'ramenKids',
-  title: t('dish.ramenKids.title'),
   desc: t('dish.ramenKids.desc'),
+  id: 'ramenKids',
   pic: picFolder + 'ramen-curry.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenKids.title')
 };
 const ramenMushroms: Dish = {
-  id: 'ramenMushroms',
-  title: t('dish.ramenMushroms.title'),
   desc: t('dish.ramenMushroms.desc'),
+  id: 'ramenMushroms',
   pic: picFolder + 'ramen-mushroms.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenMushroms.title')
 };
 const ramenPineapple: Dish = {
-  id: 'ramenPineapple',
-  title: t('dish.ramenPineapple.title'),
   desc: t('dish.ramenPineapple.desc'),
+  id: 'ramenPineapple',
   pic: picFolder + 'ramen-pineapple.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenPineapple.title')
 };
 const ramenPork: Dish = {
-  id: 'ramenPineaple',
-  title: t('dish.ramenPork.title'),
   desc: t('dish.ramenPork.desc'),
+  id: 'ramenPineaple',
   pic: picFolder + 'ramen-pork.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenPork.title')
 };
 const ramenRice: Dish = {
-  id: 'ramenRice',
-  title: t('dish.ramenRice.title'),
   desc: t('dish.ramenRice.desc'),
+  id: 'ramenRice',
   pic: picFolder + 'ramen-rice.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.ramenRice.title')
 };
 
 // DONBURI
 
 const donburiBeef: Dish = {
-  id: 'donburiBeef',
-  title: t('dish.donburiBeef.title'),
   desc: t('dish.donburiBeef.desc'),
+  id: 'donburiBeef',
   pic: picFolder + 'donburi-beef.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.donburiBeef.title')
 };
 const donburiChiken: Dish = {
-  id: 'donburiChiken',
-  title: t('dish.donburiChiken.title'),
   desc: t('dish.donburiChiken.desc'),
+  id: 'donburiChiken',
   pic: picFolder + 'rdonburi-chiken.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.donburiChiken.title')
 };
 const donburiPork: Dish = {
-  id: 'donburiPork',
-  title: t('dish.donburiPork.title'),
   desc: t('dish.donburiPork.desc'),
+  id: 'donburiPork',
   pic: picFolder + 'donburi-pork.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.donburiPork.title')
 };
 const riceEggs: Dish = {
-  id: 'riceEggs',
-  title: t('dish.riceEggs.title'),
   desc: t('dish.riceEggs.desc'),
+  id: 'riceEggs',
   pic: picFolder + 'rice-eggs.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.riceEggs.title')
 };
 const riceVegetables: Dish = {
-  id: 'riceVegetables',
-  title: t('dish.riceVegetables.title'),
   desc: t('dish.riceVegetables.desc'),
+  id: 'riceVegetables',
   pic: picFolder + 'rice-vegetables.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.riceVegetables.title')
 };
 
 // DESSERT
 
 const dessertBingsu: Dish = {
-  id: 'dessertBingsu',
-  title: t('dish.dessertBingsu.title'),
   desc: t('dish.dessertBingsu.desc'),
+  id: 'dessertBingsu',
   pic: picFolder + 'dessert-bingsu.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.dessertBingsu.title')
 };
 const dessertMatchaChoco: Dish = {
-  id: 'dessertMatchaChoco',
-  title: t('dish.dessertMatchaChoco.title'),
   desc: t('dish.dessertMatchaChoco.desc'),
+  id: 'dessertMatchaChoco',
   pic: picFolder + 'dessert-matcha-choco.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.dessertMatchaChoco.title')
 };
 const dessertMochi: Dish = {
-  id: 'dessertMochi',
-  title: t('dish.dessertMochi.title'),
   desc: t('dish.dessertMochi.desc'),
+  id: 'dessertMochi',
   pic: picFolder + 'dessert-mochi.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.dessertMochi.title')
 };
 const dessertSweets: Dish = {
-  id: 'dessertSweets',
-  title: t('dish.dessertSweets.title'),
   desc: t('dish.dessertSweets.desc'),
+  id: 'dessertSweets',
   pic: picFolder + 'dessert-sweets.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.dessertSweets.title')
 };
 
 // DRINKS
 const drinkBeer: Dish = {
-  id: 'drinkBeer',
-  title: t('dish.drinkBeer.title'),
   desc: t('dish.drinkBeer.desc'),
+  id: 'drinkBeer',
   pic: picFolder + 'drink-beer.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkBeer.title')
 };
 const drinkBubbleTea: Dish = {
-  id: 'drinkBubbleTea',
-  title: t('dish.drinkBubbleTea.title'),
   desc: t('dish.drinkBubbleTea.desc'),
+  id: 'drinkBubbleTea',
   pic: picFolder + 'drink-bubbleTea.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkBubbleTea.title')
 };
 const drinkCoffeeCup: Dish = {
-  id: 'drinkCoffeeCup',
-  title: t('dish.drinkCoffeeCup.title'),
   desc: t('dish.drinkCoffeeCup.desc'),
+  id: 'drinkCoffeeCup',
   pic: picFolder + 'drink-coffee-cup.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkCoffeeCup.title')
 };
 const drinkSake: Dish = {
-  id: 'drinkSake',
-  title: t('dish.drinkSake.title'),
   desc: t('dish.drinkSake.desc'),
+  id: 'drinkSake',
   pic: picFolder + 'drink-sake.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkSake.title')
 };
 const drinkSoda: Dish = {
-  id: 'drinkSoda',
-  title: t('dish.drinkSoda.title'),
   desc: t('dish.drinkSoda.desc'),
+  id: 'drinkSoda',
   pic: picFolder + 'drink-soda.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkSoda.title')
 };
 const drinkSparklingWater: Dish = {
-  id: 'drinkSparklingWater',
-  title: t('dish.drinkSparklingWater.title'),
   desc: t('dish.drinkSparklingWater.desc'),
+  id: 'drinkSparklingWater',
   pic: picFolder + 'drink-sparkling-water.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkSparklingWater.title')
 };
 const drinkSpecialCoffee: Dish = {
-  id: 'drinkSpecialCoffee',
-  title: t('dish.drinkSpecialCoffee.title'),
   desc: t('dish.drinkSpecialCoffee.desc'),
+  id: 'drinkSpecialCoffee',
   pic: picFolder + 'drink-special-coffee.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkSpecialCoffee.title')
 };
 const drinkVineBottle: Dish = {
-  id: 'drinkVineBottle',
-  title: t('dish.drinkVineBottle.title'),
   desc: t('dish.drinkVineBottle.desc'),
+  id: 'drinkVineBottle',
   pic: picFolder + 'drink-vine-bottle.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkVineBottle.title')
 };
 const drinkWater: Dish = {
-  id: 'drinkWater',
-  title: t('dish.drinkWater.title'),
   desc: t('dish.drinkWater.desc'),
+  id: 'drinkWater',
   pic: picFolder + 'drink-water.png',
-  price: 12.3
+  price: 12.3,
+  title: t('dish.drinkWater.title')
 };
 
 // DISHES COLLECTION
@@ -267,7 +267,7 @@ const dishesStarters: Dish[] = [
   starterEkonomiyaki,
   starterShrimps,
   starterTokoyaki
-]
+];
 
 const dishesRamen: Dish[] = [
   ramenBeef,
@@ -276,7 +276,7 @@ const dishesRamen: Dish[] = [
   ramenRice,
   ramenMushroms,
   ramenPineapple,
-  ramenKids,
+  ramenKids
 ];
 
 const dishesDessert: Dish[] = [
@@ -284,7 +284,7 @@ const dishesDessert: Dish[] = [
   dessertMatchaChoco,
   dessertMochi,
   dessertSweets
-]
+];
 
 const dishesDonburi: Dish[] = [
   donburiBeef,
@@ -292,7 +292,7 @@ const dishesDonburi: Dish[] = [
   donburiPork,
   riceEggs,
   riceVegetables
-]
+];
 
 const dishesDrinks: Dish[] = [
   drinkBeer,
@@ -304,15 +304,15 @@ const dishesDrinks: Dish[] = [
   drinkSpecialCoffee,
   drinkVineBottle,
   drinkWater
-]
+];
 
 const restDefaultDishes: Dish[] = dishesRamen;
 
 export {
-  dishesStarters,
-  dishesRamen,
-  dishesDonburi,
   dishesDessert,
+  dishesDonburi,
   dishesDrinks,
+  dishesRamen,
+  dishesStarters,
   restDefaultDishes
-}
+};
