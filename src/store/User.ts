@@ -1,7 +1,6 @@
 import { Sections } from '@globals/sections';
 import { EnumLang, EnumTheme } from '@models/user';
 import { defineStore } from 'pinia';
-import type { Ref } from 'vue';
 
 type HTMLElement = globalThis.HTMLElement;
 
@@ -46,12 +45,7 @@ const useUserStore = defineStore<'user', UserStoreState, UserStoreGetters, UserS
   getters: { getLang (): EnumLang { return this.lang; } },
   state: (): UserStoreState => ({
     lang: EnumLang.EN,
-    refSections: {
-      [Sections.Contact]: null,
-      [Sections.Delivery]: null,
-      [Sections.Location]: null,
-      [Sections.Menu]: null
-    },
+    refSections: {},
     theme: EnumTheme.DARK
   })
 });
