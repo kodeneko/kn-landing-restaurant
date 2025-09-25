@@ -2,7 +2,6 @@
 import BtnCompo from '@components/btn/BtnCompo.vue';
 import { socialList } from '@globals/social';
 import ramenBowl from '@assets/pics/ramen-bowl.png'
-
 </script>
 
 <template>

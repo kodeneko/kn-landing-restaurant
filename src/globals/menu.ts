@@ -1,6 +1,9 @@
 import { Menu, Opt } from '@models/index';
 import { t } from 'i18next';
 
+import { Paths } from './paths';
+import { Sections } from './sections';
+
 const optStarters: Opt = {
   id: 'starters',
   label: t('label.starters')
@@ -37,26 +40,26 @@ const restMenu: Menu = [
 const restDefaultSelOpt = restMenu.find((r) => r.id === optRamen.id);
 
 const optMenu: Opt = {
-  href: '#menu',
-  id: 'menu',
+  href: Paths.Menu,
+  id: Sections.Menu,
   label: t('label.menu')
 };
 
 const optLocation: Opt = {
-  href: '#location',
-  id: 'location',
+  href: Paths.Location,
+  id: Sections.Location,
   label: t('label.location')
 };
 
 const optDelivery: Opt = {
-  href: '#delivery',
-  id: 'delivery',
+  href: Paths.Delivery,
+  id: Sections.Delivery,
   label: t('label.delivery')
 };
 
 const optContact: Opt = {
-  href: '#contact',
-  id: 'contact',
+  href: Paths.Contact,
+  id: Sections.Contact,
   label: t('label.contact')
 };
 

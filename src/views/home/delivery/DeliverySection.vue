@@ -2,13 +2,21 @@
 import pic from '@assets/pics/rider.png'
 import BtnCompo from '@components/btn/BtnCompo.vue';
 import { useMediaMobile } from '@hooks/useMedia';
+import useUserStore from '@store/User';
+import { onMounted, ref } from 'vue';
+
+const userStore = useUserStore();
+const sectionRef = ref<HTMLElement | null>(null);
+onMounted(() => {
+  userStore.setRef('delivery', sectionRef.value as HTMLElement);
+})
 
 const isMobile = useMediaMobile();
 const sizeBtns = () => isMobile ? 'sm' : 'md'
 </script>
 
 <template>
-  <div class="delivery-section">
+  <div class="delivery-section" ref="sectionRef">
     <div class="left">
       <img 
         class="pic" 

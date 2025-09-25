@@ -5,4 +5,6 @@ const Sections = {
   Menu: 'menu'
 } as const;
 
-export { Sections };
+const SectionList: string[] = Object.values(Sections);
+
+export { SectionList, Sections };

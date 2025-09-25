@@ -26,7 +26,7 @@ export {
   restDefaultSelOpt,
   restMenu
 } from './menu';
-export { Paths } from './paths';
+export { PathList, Paths } from './paths';
 export { Sections } from './sections';
 export {
   optInsta,

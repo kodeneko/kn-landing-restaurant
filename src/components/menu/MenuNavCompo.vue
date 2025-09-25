@@ -17,11 +17,11 @@ defineEmits<{
       :key="opt.id"
       :on-click="$emit('click', opt)"  
     >
-      <a 
+      <RouterLink 
         :class="{opt: true, selected: selected.id === opt.id}"
-        :href="opt.href" 
+        :to="opt.href as string" 
       >{{ opt.label }}
-      </a>
+      </RouterLink>
     </li>
   </ul>
 </template>

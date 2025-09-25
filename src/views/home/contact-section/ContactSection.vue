@@ -4,10 +4,18 @@ import BtnCompo from '@components/btn/BtnCompo.vue';
 import FieldCompo from '@components/form/FieldCompo.vue';
 import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
-import { ref } from 'vue';
+import useUserStore from '@store/User';
+import { onMounted, ref } from 'vue';
 
 const isMobile = useMediaMobile();
 const getSize = () => isMobile.value ? 'sm' : 'md'
+
+const userStore = useUserStore();
+const sectionRef = ref<HTMLElement | null>(null);
+onMounted(() => {
+  userStore.setRef('contact', sectionRef.value as HTMLElement);
+})
+
 const contact = ref<Contact>({
   name: '',
   mail: '',
@@ -16,7 +24,7 @@ const contact = ref<Contact>({
 </script>
 
 <template>
-  <div class="contact-section">
+  <div class="contact-section" ref="sectionRef">
 
     <div class="header">
       <h2 class="title">We Hear You!</h2>

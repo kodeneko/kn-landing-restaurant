@@ -5,4 +5,6 @@ const Paths = {
   Menu: '/menu'
 } as const;
 
-export { Paths };
+const PathList: string[] = Object.values(Paths);
+
+export { PathList, Paths };
