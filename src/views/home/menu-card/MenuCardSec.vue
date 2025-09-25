@@ -13,7 +13,7 @@ import { onMounted, ref } from 'vue';
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
 onMounted(() => {
-  userStore.setRef('menu', sectionRef.value as HTMLElement);
+  userStore.setRef(Sections.Menu, sectionRef.value as HTMLElement);
 })
 
 const selected = ref<Opt>(restDefaultSelOpt as Opt);

@@ -2,6 +2,7 @@
 import pic from '@assets/pics/dishes/ramen-beef.png'
 import BtnCompo from '@components/btn/BtnCompo.vue';
 import FieldCompo from '@components/form/FieldCompo.vue';
+import { Sections } from '@globals/sections';
 import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
 import useUserStore from '@store/User';
@@ -13,7 +14,7 @@ const getSize = () => isMobile.value ? 'sm' : 'md'
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
 onMounted(() => {
-  userStore.setRef('contact', sectionRef.value as HTMLElement);
+  userStore.setRef(Sections.Contact, sectionRef.value as HTMLElement);
 })
 
 const contact = ref<Contact>({

@@ -3,11 +3,12 @@ import TitleSecCompo from '@components/text/TitleSecCompo.vue';
 import AddressMapCompo from './AddressMapCompo.vue';
 import useUserStore from '@store/User';
 import { onMounted, ref } from 'vue';
+import { Sections } from '@globals/sections';
 
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
 onMounted(() => {
-  userStore.setRef('location', sectionRef.value as HTMLElement);
+  userStore.setRef(Sections.Location, sectionRef.value as HTMLElement);
 })
 
 </script>

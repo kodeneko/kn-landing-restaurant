@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import pic from '@assets/pics/rider.png'
 import BtnCompo from '@components/btn/BtnCompo.vue';
+import { Sections } from '@globals/sections';
 import { useMediaMobile } from '@hooks/useMedia';
 import useUserStore from '@store/User';
 import { onMounted, ref } from 'vue';
@@ -8,7 +9,7 @@ import { onMounted, ref } from 'vue';
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
 onMounted(() => {
-  userStore.setRef('delivery', sectionRef.value as HTMLElement);
+  userStore.setRef(Sections.Delivery, sectionRef.value as HTMLElement);
 })
 
 const isMobile = useMediaMobile();
