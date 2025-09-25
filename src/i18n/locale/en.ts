@@ -175,5 +175,6 @@ export default {
     menu: 'Menu',
     ramen: 'Ramen',
     starters: 'Starters'
-  }
+  },
+  webTitle: 'Ramen Nemar - Japanese Food'
 };

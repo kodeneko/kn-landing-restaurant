@@ -24,3 +24,5 @@ function initI18n (app: App) {
 }
 
 export default initI18n;
+
+export { i18next };
