@@ -31,6 +31,7 @@ export default [
   // Javascript & Typescript
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
+    languageOptions: { parser: parserTs },
     plugins: {
       'simple-import-sort': simpleImportSort,
       'sort-keys': sortKeys

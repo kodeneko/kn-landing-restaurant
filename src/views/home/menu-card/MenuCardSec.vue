@@ -4,17 +4,24 @@ import MenuNavCompo from '@components/menu/MenuNavCompo.vue';
 import TitleSecCompo from '@components/text/TitleSecCompo.vue';
 import { restDefaultDishes } from '@globals/dish';
 import { restDefaultSelOpt, restMenu } from '@globals/menu';
+import { Sections } from '@globals/sections';
 import Dish from '@models/Dish';
 import { Opt } from '@models/user';
-import { ref } from 'vue';
+import useUserStore from '@store/User';
+import { onMounted, ref } from 'vue';
+
+const userStore = useUserStore();
+const sectionRef = ref<HTMLElement | null>(null);
+onMounted(() => {
+  userStore.setRef(Sections.Menu, sectionRef.value as HTMLElement);
+})
 
 const selected = ref<Opt>(restDefaultSelOpt as Opt);
 const dishes = ref<Dish[]>(restDefaultDishes)
-
 </script>
 
 <template>
-  <div class="menu-card-sec">
+  <div class="menu-card-sec" ref="sectionRef">
     <TitleSecCompo>Menu</TitleSecCompo>
     <div class="menu-wrap">
       <MenuNavCompo 

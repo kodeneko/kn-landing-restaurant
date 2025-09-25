@@ -1,8 +1,13 @@
-import { mediaMobile, mediaTablet, mediaUnits, mediaWeb } from "@globals/media";
-import { ref } from "vue";
+import { mediaMobile, mediaTablet, mediaUnits, mediaWeb } from '@globals/media';
+import { ref } from 'vue';
 
-function useMedia(sizeQuery: string) {
-  const mediaQueryList = window.matchMedia(sizeQuery);
+function useMedia (sizeQuery: string) {
+  if (typeof window === 'undefined') {
+    const sw = ref<boolean>(false);
+    return sw;
+  }
+
+  const mediaQueryList = globalThis.window.matchMedia(sizeQuery);
   const sw = ref<boolean>(mediaQueryList.matches);
   mediaQueryList.addEventListener('change', (event) => {
     sw.value = event.matches;
@@ -24,7 +29,7 @@ function useMediaMobile () {
 
 export {
   useMedia,
-  useMediaWeb,
+  useMediaMobile,
   useMediaTablet,
-  useMediaMobile
-}
+  useMediaWeb
+};

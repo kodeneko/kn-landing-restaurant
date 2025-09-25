@@ -1,36 +1,34 @@
 
-import type { Meta, StoryObj } from '@storybook/vue3';
+import pic from '@assets/pics/ramen-beef.png';
 import CardDishCompo from '@components/card/CardDishCompo.vue';
-import pic from '@assets/pics/ramen-beef.png'
+import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Card/Dish',
-  component: CardDishCompo,
-  parameters: {
-    layout: 'fullscreen',
-  },
   args: {
-    title: "Beef ramen egg",
+    desc: 'Lorem ipsum dolor sit amet consectetur adipiscing  ipsum dolor adipiscing adipiscing lorem armet',
     pic,
-    desc: "Lorem ipsum dolor sit amet consectetur adipiscing  ipsum dolor adipiscing adipiscing lorem armet",
     price: 20,
-    symbol: "€"
+    symbol: '€',
+    title: 'Beef ramen egg'
   },
-  tags: ['autodocs'],
-  decorators: [() => ({
-    template: `
+  component: CardDishCompo,
+  decorators: [
+    () => ({
+      template: `
     <div style="background-color: #170D09; padding: 2em;">
       <div style="width: 280px">
         <story />
       </div>
     </div>
     `
-})],
+    })
+  ],
+  parameters: { layout: 'fullscreen' },
+  tags: ['autodocs'],
+  title: 'Card/Dish'
 } satisfies Meta<typeof CardDishCompo>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {}
-};
+export const Default: Story = { args: {} };

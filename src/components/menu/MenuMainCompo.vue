@@ -1,10 +1,8 @@
 <script lang="ts" setup>
+import { Menu } from '@models/user';
+
 defineProps<{
-  opts: {
-    id: string;
-    label: string;
-    href: string;
-  }[]
+  opts: Menu
 }>();
 defineEmits<{
   click: [id: string]
@@ -14,7 +12,7 @@ defineEmits<{
 <template>
   <ul class="menu-main">
     <li class="opt" v-for="opt in opts" :key="opt.id">
-      <a :href="opt.href" >{{ opt.label }}</a>
+      <RouterLink :to="opt.href as string">{{ opt.label }}</RouterLink>
     </li>
   </ul>
 </template>
