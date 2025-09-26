@@ -16,8 +16,6 @@ defineProps<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .title-sec-compo {
   font-size: 3.25rem;
   color: @c-light;

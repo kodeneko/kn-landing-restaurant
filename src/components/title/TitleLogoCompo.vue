@@ -9,8 +9,6 @@
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .title-logo-compo {
     position: relative;
     display: inline-block;

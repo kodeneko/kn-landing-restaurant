@@ -49,8 +49,6 @@ import ListIconInfoCompo from '@components/text/ListIconInfoCompo.vue'
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .address-map {
   border-radius: 20px;
   max-width: 1000px;

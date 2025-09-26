@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import TitleCompo from '@components/title/TitleCompo.vue';
+import { Paths } from '@globals/paths';
 import { socialList } from '@globals/social';
 
 </script>
@@ -31,10 +32,13 @@ import { socialList } from '@globals/social';
     <div class="right">
       <ul class="list">
         <li class="ele">
-          <a class="link">Terms & Conditions</a>
+          <RouterLink class="link" :to="Paths.Legal">{{ $t('label.legal') }}</RouterLink>
         </li>
         <li class="ele">
-          <a class="link">Private Policy</a>
+          <RouterLink class="link" :to="Paths.Privacy">{{ $t('label.privacy') }}</RouterLink>
+        </li>
+        <li class="ele">
+          <RouterLink class="link" :to="Paths.Cookies">{{ $t('label.cookies') }}</RouterLink>
         </li>
       </ul>
     </div>
@@ -42,8 +46,6 @@ import { socialList } from '@globals/social';
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .main-footer {
   display: flex;
   justify-content: space-between;
@@ -108,9 +110,10 @@ import { socialList } from '@globals/social';
 
         text-align: right;
         
-        .link {
+        a {
           transition: all .3s;
           display: block;
+          color: @c-light;
           
           &:hover {
             cursor: pointer;

@@ -16,8 +16,6 @@ import { mainMenu } from '@globals/menu';
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .main-bar {
   display: flex;
   align-items: center;

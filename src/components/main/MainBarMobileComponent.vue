@@ -18,8 +18,6 @@ import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .main-bar-mobile {
   display: flex;
   align-items: start;

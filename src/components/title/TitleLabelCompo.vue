@@ -12,8 +12,6 @@
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .title-label-compo {
   display: flex;
   gap: 0.3em;

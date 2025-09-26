@@ -22,8 +22,6 @@ defineProps<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .list-icon-compo {
   font-size: .7rem;
   display: flex;

@@ -8,15 +8,16 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
+        additionalData: '@import "@/assets/styles/global.less";',
         paths: [
-          path.resolve(__dirname, 'src/assets/styles'),
-          path.resolve(__dirname, 'src/assets/pics'),
+          path.resolve(__dirname, './src/assets/styles'),
+          path.resolve(__dirname, './src/assets/pics'),
           path.resolve(__dirname, 'node_modules')
         ]
       }
     }
   },
-  plugins: [ vue() ],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

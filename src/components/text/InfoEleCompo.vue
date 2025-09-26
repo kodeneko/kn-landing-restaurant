@@ -17,8 +17,6 @@ defineProps<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .info-ele-compo {
   display: flex;
   flex-direction: column;
