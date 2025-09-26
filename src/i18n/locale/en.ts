@@ -167,12 +167,15 @@ export default {
   },
   label: {
     contact: 'Contact',
+    cookies: 'Cookies Policy',
     delivery: 'Delivery',
     dessert: 'Dessert',
     donburi: 'Donburi',
     drinks: 'Drinks',
+    legal: 'Legal Notice',
     location: 'Location',
     menu: 'Menu',
+    privacy: 'Privacy Policy',
     ramen: 'Ramen',
     starters: 'Starters'
   },

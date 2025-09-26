@@ -22,8 +22,6 @@ const model = defineModel<string>();
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .field {
   background-color: transparent;
   border: 0.06rem solid @c-red;

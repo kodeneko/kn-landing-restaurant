@@ -27,8 +27,6 @@ defineEmits<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .menu-main {
   display: flex;
   gap: 20px;

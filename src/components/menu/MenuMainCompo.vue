@@ -18,8 +18,6 @@ defineEmits<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .menu-main {
   display: flex;
 

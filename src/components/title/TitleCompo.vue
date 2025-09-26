@@ -22,8 +22,6 @@ defineProps<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .title-compo {
   width: fit-content;
   display: flex;

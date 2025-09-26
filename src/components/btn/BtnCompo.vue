@@ -34,8 +34,6 @@ defineEmits<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .btn {
   display: flex;
   justify-content: center;

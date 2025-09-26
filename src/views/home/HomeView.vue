@@ -44,6 +44,5 @@ watch(() => route.path, (newPath) => {
 .cont {
   display: flex;
   flex-direction: column;
-
 }
 </style>

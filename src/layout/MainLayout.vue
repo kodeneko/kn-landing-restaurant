@@ -27,8 +27,6 @@ const isMobile = useMediaMobile();
 </template>
 
 <style scoped lang="less">
-@import 'global.less';
-
 .main-layout {
   z-index: 11;
   position: relative;

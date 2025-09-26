@@ -30,8 +30,6 @@ defineProps<{
 </template>
 
 <style lang="less" scoped>
-@import 'global.less';
-
 .card-dish {
   position: relative;
   padding: 20px;
