@@ -5,6 +5,7 @@ import FieldCompo from '@components/form/FieldCompo.vue';
 import { Sections } from '@globals/sections';
 import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
+import { motion as m } from "motion-v";
 import useUserStore from '@store/User';
 import { onMounted, ref } from 'vue';
 
@@ -26,17 +27,59 @@ const contact = ref<Contact>({
 
 <template>
   <div class="contact-section" ref="sectionRef">
-
-    <div class="header">
+    <m.div 
+      class="header"
+      :initial="{
+        opacity: 0
+      }"
+      :while-in-view="{
+        opacity: 1
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
       <h2 class="title">We Hear You!</h2>
       <p class="sub">Questions, suggestions, critics, congrats, offers...</p>
-    </div>
+    </m.div>
 
     <div class="content">
-      <div class="left">
+      <m.div 
+        class="left"
+        :initial="{
+          opacity: 0,
+          x: -100
+        }"
+        :while-in-view="{
+          opacity: 1,
+          x: 0
+        }"
+        :inViewOptions="{ once: true, amount: 'some' }"
+        :transition="{
+          delay: 0.3,
+          duration: 0.7
+        }"
+      >
         <img :src="pic" />
-      </div>
-      <div class="right">
+      </m.div>
+      <m.div 
+        class="right"
+        :initial="{
+          opacity: 0,
+          x: 100
+        }"
+        :while-in-view="{
+          opacity: 1,
+          x: 0
+        }"
+        :inViewOptions="{ once: true, amount: 'some' }"
+        :transition="{
+          delay: 0.3,
+          duration: 0.7
+        }"
+      >
         <form class="form-contact">
           <FieldCompo 
             v-model="contact.name" 
@@ -63,7 +106,7 @@ const contact = ref<Contact>({
             />
           </div>
         </div>
-      </div>
+      </m.div>
     </div>
 
   </div>
@@ -79,6 +122,9 @@ const contact = ref<Contact>({
   gap: 60px;
 
   .header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
     text-align: right;
     .title {
       font-size: 72px;

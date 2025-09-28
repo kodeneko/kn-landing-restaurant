@@ -7,6 +7,7 @@ import { restDefaultSelOpt, restMenu } from '@globals/menu';
 import { Sections } from '@globals/sections';
 import Dish from '@models/Dish';
 import { Opt } from '@models/user';
+import { motion as m } from "motion-v";
 import useUserStore from '@store/User';
 import { onMounted, ref } from 'vue';
 
@@ -21,7 +22,20 @@ const dishes = ref<Dish[]>(restDefaultDishes)
 </script>
 
 <template>
-  <div class="menu-card-sec" ref="sectionRef">
+  <m.div 
+    class="menu-card-sec"
+    :initial="{
+      opacity: 0
+    }"
+    :while-in-view="{
+      opacity: 1
+    }"
+    :inViewOptions="{ once: true, amount: 'some' }"
+    :transition="{
+      delay: 0.3,
+      duration: 0.7
+    }"
+  >
     <TitleSecCompo>Menu</TitleSecCompo>
     <div class="menu-wrap">
       <MenuNavCompo 
@@ -42,7 +56,7 @@ const dishes = ref<Dish[]>(restDefaultDishes)
         />
       </li>
     </ul>
-  </div>
+  </m.div>
 </template>
 
 <style lang="less" scoped>
