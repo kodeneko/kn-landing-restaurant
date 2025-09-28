@@ -7,7 +7,9 @@ import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
 import { motion as m } from "motion-v";
 import useUserStore from '@store/User';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, reactive } from 'vue';
+import useVuelidate from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 
 const isMobile = useMediaMobile();
 const getSize = () => isMobile.value ? 'sm' : 'md'
@@ -18,11 +20,36 @@ onMounted(() => {
   userStore.setRef(Sections.Contact, sectionRef.value as HTMLElement);
 })
 
-const contact = ref<Contact>({
+const contact = reactive<Contact>({
   name: '',
   mail: '',
   msg: ''
 });
+
+const rules = {
+  contact: {
+    name: { required },
+    mail: { required, email },
+    msg: { required },
+  }
+}
+
+const v$ = useVuelidate(rules, { contact })
+
+const getErrorMsg = (field: string) => {
+  return ""
+  const fieldValidation = v$.contact[field];
+  if (fieldValidation?.$dirty && fieldValidation?.$errors.length) {
+    if (field === 'mail' && fieldValidation?.$errors.some(e => e.$validator === 'email')) {
+      return "The mail format is invalid";
+    }
+    if (fieldValidation?.$errors.some(e => e.$validator === 'required')) {
+      return "The field is required";
+    }
+  }
+  return "";
+}
+
 </script>
 
 <template>
@@ -83,21 +110,27 @@ const contact = ref<Contact>({
         <form class="form-contact">
           <FieldCompo 
             v-model="contact.name" 
+            @blur="v$.contact.name.$touch()"
             place-h="name..." 
+            :hint="v$.contact?.name && getErrorMsg('name')"
           />
           <FieldCompo 
             v-model="contact.mail" 
+            @blur="v$.contact.mail.$touch()"
             place-h="mail..." 
+            :hint="v$.contact?.mail && getErrorMsg('mail')"
           />
           <FieldCompo 
-            v-model="contact.msg" 
+            v-model="contact.msg"
+            @blur="v$.contact.msg.$touch()" 
             place-h="message..." 
             :textarea="true"
+            :hint="v$.contact?.msg && getErrorMsg('msg')"
           />
         </form>
         <div class="bottom">
           <div class="hint-info">
-            <p>Un hint random</p>
+            <p></p>
           </div>
           <div class="actions">
             <BtnCompo

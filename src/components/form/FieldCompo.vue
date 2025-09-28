@@ -1,27 +1,41 @@
 <script lang="ts" setup>
 defineProps<{
+  modelValue: string,
   placeH: string;
   textarea?: boolean;
+  hint?: string
 }>()
-const model = defineModel<string>();
+
+const emit = defineEmits(['update:modelValue', 'blur'])
 </script>
 
 <template>
-  <input 
-    v-if="!textarea"
-    :class="['field', 'input']"
-    v-model="model"
-    :placeholder="placeH"
-  />
-  <textarea
-    v-else
-    :class="['field', 'textarea']"
-    v-model="model"
-    :placeholder="placeH"
-  ></textarea>
+  <div class="cont">
+    <input 
+      v-if="!textarea"
+      :class="['field', 'input']"
+      :value="modelValue"
+      @input="emit('update:modelValue', $event.target.value)"
+      :placeholder="placeH"
+      @blur="$emit('blur')"
+    />
+    <textarea
+      v-else
+      :class="['field', 'textarea']"
+      @input="emit('update:modelValue', $event.target.value)"
+      @blur="$emit('blur')"
+      :placeholder="placeH"
+    >{{ modelValue }}</textarea>
+    <div class="hint">{{ hint }}</div>
+  </div>
 </template>
 
 <style lang="less" scoped>
+.cont {
+  display: flex;
+  flex-direction: column;
+}
+
 .field {
   background-color: transparent;
   border: 0.06rem solid @c-red;
@@ -41,6 +55,14 @@ const model = defineModel<string>();
 }
 
 .textarea {
-  height: 100%;
+  height: 12rem;
+}
+
+.hint {
+  color: @c-red;
+  font-style: italic;
+  height: 1.1rem;
+  padding: 0.6rem 0;
+  text-align: right;
 }
 </style>
