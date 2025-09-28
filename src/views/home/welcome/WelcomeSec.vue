@@ -33,6 +33,17 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
       />
     </div>
     <div class="pic">
+      <svg>
+        <filter id="blurry">
+          <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
+          <feDisplacementMap in="SourceGraphic" scale="180" />
+        </filter>
+      </svg>
+      <div class="steam"></div>
+      <filter id="blurry">
+        <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
+        <feDisplacementMap in="SourceGraphic" scale="180" />
+      </filter>
       <img :src="ramenBowl" />
     </div>
   </div>
@@ -40,6 +51,23 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
 
 <style lang="less" scoped>
 @import url('global.less');
+
+.steam {
+    height: 0;
+    width: 0;
+    margin: 3rem;
+    border-radius: 50%;
+    position: relative;
+    top: 3rem;
+    left: 12rem;
+    box-shadow: 0.63rem 0.63rem 4.4rem 6.3rem white;
+    filter: url(#blurry);
+    z-index: 10;
+
+    animation-name: steamAnim;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+  }
 
 .welcome-sec {
   display: grid;
@@ -98,6 +126,7 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
     grid-area: pic;
     align-self: end;
     justify-self: end;
+    position: relative;
 
     img {
       height: 25rem;
@@ -151,6 +180,28 @@ import ramenBowl from '@assets/pics/ramen-bowl.png'
         height: 11.25rem;
       }
     }
+  }
+}
+
+@keyframes steamAnim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0px, -150px);
+    opacity: 0;
+  }
+}
+
+@keyframes levitation {
+  0%{
+    transform: translateY(0rem);
+  }
+  100%{
+    transform: translateY(-0.8rem);
   }
 }
 </style>
