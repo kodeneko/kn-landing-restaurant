@@ -15,14 +15,14 @@ const emit = defineEmits(['update:modelValue', 'blur'])
       v-if="!textarea"
       :class="['field', 'input']"
       :value="modelValue"
-      @input="emit('update:modelValue', $event.target.value)"
+      @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="placeH"
       @blur="$emit('blur')"
     />
     <textarea
       v-else
       :class="['field', 'textarea']"
-      @input="emit('update:modelValue', $event.target.value)"
+      @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')"
       :placeholder="placeH"
     >{{ modelValue }}</textarea>

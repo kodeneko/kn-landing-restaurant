@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 import pic from '@assets/pics/dishes/ramen-beef.png'
 import BtnCompo from '@components/btn/BtnCompo.vue';
-import FieldCompo from '@components/form/FieldCompo.vue';
 import { Sections } from '@globals/sections';
 import { useMediaMobile } from '@hooks/useMedia';
 import Contact from '@models/Contact';
 import { motion as m } from "motion-v";
 import useUserStore from '@store/User';
-import { onMounted, ref, reactive } from 'vue';
-import useVuelidate from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { onMounted, ref, reactive, watch } from 'vue';
+import FormContactComponent from './FormContactComponent.vue';
 
 const isMobile = useMediaMobile();
 const getSize = () => isMobile.value ? 'sm' : 'md'
@@ -25,30 +23,6 @@ const contact = reactive<Contact>({
   mail: '',
   msg: ''
 });
-
-const rules = {
-  contact: {
-    name: { required },
-    mail: { required, email },
-    msg: { required },
-  }
-}
-
-const v$ = useVuelidate(rules, { contact })
-
-const getErrorMsg = (field: string) => {
-  const fieldValidation = v$.value.contact[field];
-  if (fieldValidation?.$dirty && fieldValidation?.$errors.length) {
-    if (field === 'mail' && fieldValidation?.$errors.some(e => e.$validator === 'email')) {
-      return "The mail format is invalid";
-    }
-    if (fieldValidation?.$errors.some(e => e.$validator === 'required')) {
-      return "The field is required";
-    }
-  }
-  return "";
-}
-
 </script>
 
 <template>
@@ -106,27 +80,7 @@ const getErrorMsg = (field: string) => {
           duration: 0.7
         }"
       >
-        <form class="form-contact">
-          <FieldCompo 
-            v-model="contact.name" 
-            @blur="v$.contact.name.$touch()"
-            place-h="name..." 
-            :hint="v$.contact?.name && getErrorMsg('name')"
-          />
-          <FieldCompo 
-            v-model="contact.mail" 
-            @blur="v$.contact.mail.$touch()"
-            place-h="mail..." 
-            :hint="v$.contact?.mail && getErrorMsg('mail')"
-          />
-          <FieldCompo 
-            v-model="contact.msg"
-            @blur="v$.contact.msg.$touch()" 
-            place-h="message..." 
-            :textarea="true"
-            :hint="v$.contact?.msg && getErrorMsg('msg')"
-          />
-        </form>
+        <FormContactComponent v-model="contact" />
         <div class="bottom">
           <div class="hint-info">
             <p></p>
@@ -185,12 +139,6 @@ const getErrorMsg = (field: string) => {
         background-color: @c-red-trans;
         border-radius: 40px;
         padding: 40px;
-
-      .form-contact {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
 
       .bottom {
         display: flex;
