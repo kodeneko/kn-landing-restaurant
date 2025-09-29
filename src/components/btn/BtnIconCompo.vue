@@ -3,8 +3,8 @@ defineProps<{
   icon: string;
   size?: "lg" | "md" | "sm";
 }>();
-defineEmits<{
-  click
+const emit = defineEmits<{
+  (e: 'click'): void;
 }>();
 </script>
 
@@ -14,7 +14,7 @@ defineEmits<{
       'btn',
       size ?? 'md'
     ]"
-    :on-click="$emit('click')"
+    @click="$emit('click')"
   >
     <fai 
       class="icon"

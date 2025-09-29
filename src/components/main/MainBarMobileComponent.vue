@@ -1,6 +1,24 @@
 <script lang="ts" setup>
 import TitleCompo from '@components/title/TitleCompo.vue';
 import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
+import MenuMainMobileCompo from '@components/menu/MenuMainMobileCompo.vue';
+import { mainMenu } from '@globals/menu';
+import { ref } from 'vue';
+
+const isOpen = ref<boolean>(false);
+
+function btnMenuClick() {
+  isOpen.value = !isOpen.value
+}
+
+function btnCloseClick() {
+  isOpen.value = false
+}
+
+function optionClick(opt: string) {
+  console.log('click', opt)
+  isOpen.value = false
+}
 </script>
 
 <template>
@@ -12,6 +30,13 @@ import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
       <BtnIconCompo 
         icon="fa-solid fa-bars" 
         size="sm" 
+        @click="btnMenuClick"
+      />
+      <MenuMainMobileCompo 
+        :opts="mainMenu"
+        @optClick="optionClick" 
+        @closeClick="btnCloseClick" 
+        :isOpen="isOpen" 
       />
     </div>
   </div>

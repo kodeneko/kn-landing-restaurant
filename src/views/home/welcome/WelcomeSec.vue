@@ -22,7 +22,7 @@ import { motion as m } from "motion-v";
         duration: 0.7
       }"
     >
-      <h2 class="title">Ejoy Your Ramen</h2>
+      <h2 class="title">Enjoy Your Ramen</h2>
       <ul class="social">
         <li 
           v-for="social in socialList" 
@@ -107,7 +107,9 @@ import { motion as m } from "motion-v";
   gap: 1.25rem;
 
   .left {
+    position: relative;
     display: flex;
+    z-index: 0;
     flex-direction: column;
     gap: 1.25rem;
 
@@ -172,15 +174,13 @@ import { motion as m } from "motion-v";
 
 @media @mediaTablet, @mediaMobile {
   .welcome-sec {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-      "title"
-      "pic"
-      "social"
-      "actions";
-    justify-items: center;
+    flex-direction: column;
+    align-items: center;
     padding: 1.25rem;
+
+    .social {
+      justify-content: center;
+    }
 
     .title {
       text-align: center;
