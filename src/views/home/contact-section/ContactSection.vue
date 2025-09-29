@@ -21,7 +21,7 @@ onMounted(() => {
 })
 
 const contact = reactive<Contact>({
-  name: '',
+  name: 'test',
   mail: '',
   msg: ''
 });
@@ -37,8 +37,7 @@ const rules = {
 const v$ = useVuelidate(rules, { contact })
 
 const getErrorMsg = (field: string) => {
-  return ""
-  const fieldValidation = v$.contact[field];
+  const fieldValidation = v$.value.contact[field];
   if (fieldValidation?.$dirty && fieldValidation?.$errors.length) {
     if (field === 'mail' && fieldValidation?.$errors.some(e => e.$validator === 'email')) {
       return "The mail format is invalid";
@@ -190,7 +189,6 @@ const getErrorMsg = (field: string) => {
       .form-contact {
         display: flex;
         flex-direction: column;
-        gap: 20px;
         flex-grow: 1;
       }
 
