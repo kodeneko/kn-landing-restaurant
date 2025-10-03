@@ -44,7 +44,6 @@ const isMobile = useMediaMobile();
 
 <style scoped lang="less">
 .main-layout {
-  z-index: 11;
   position: relative;
   background-image: url('back-05.jpg');
   display: flex;
@@ -59,14 +58,14 @@ const isMobile = useMediaMobile();
   .header {
     width: 100%;
     max-width: 1400px;
-    z-index: 11;
+    z-index: 2;
     position: relative;
   }
 
   .mainCont {
+    z-index: 1;
     width: 100%;
     max-width: 1400px;
-    z-index: 11;
     position: relative;
     flex-grow: 1;
   }
@@ -74,7 +73,6 @@ const isMobile = useMediaMobile();
 
   .back {
     position: absolute;
-    z-index: 10;
     background-color: rgba(23, 13, 9, 0.5);
     backdrop-filter: blur(10px);
     width: 100%;
@@ -89,7 +87,6 @@ const isMobile = useMediaMobile();
     width: 100%;
 
     .cont {
-      z-index: 11;
       max-width: 1400px;
       width: 100%;
       position: relative;
