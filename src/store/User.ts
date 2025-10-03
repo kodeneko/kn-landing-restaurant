@@ -5,6 +5,7 @@ import { defineStore } from 'pinia';
 type HTMLElement = globalThis.HTMLElement;
 
 export type UserStoreState = {
+  isMenuOpen: boolean;
   lang: EnumLang;
   theme: EnumTheme;
   refSections: {
@@ -18,6 +19,7 @@ export type UserStoreState = {
 type UserStoreGetters = { getLang: () => EnumLang };
 
 type UserStoreActions = {
+  setMenuOpen: (isMenuOpen: boolean) => void;
   scrollToSection: (section: keyof UserStoreState['refSections']) => void;
   setLang: (lang: EnumLang) => void;
   setRef: (section: keyof UserStoreState['refSections'], ref: HTMLElement) => void;
@@ -35,6 +37,9 @@ const useUserStore = defineStore<'user', UserStoreState, UserStoreGetters, UserS
     setLang (lang: EnumLang) {
       this.lang = lang;
     },
+    setMenuOpen (isMenuOpen: boolean) {
+      this.isMenuOpen = isMenuOpen;
+    },
     setRef (section: keyof UserStoreState['refSections'], ref: HTMLElement) {
       this.refSections[section] = ref;
     },
@@ -44,6 +49,7 @@ const useUserStore = defineStore<'user', UserStoreState, UserStoreGetters, UserS
   },
   getters: { getLang (): EnumLang { return this.lang; } },
   state: (): UserStoreState => ({
+    isMenuOpen: false,
     lang: EnumLang.EN,
     refSections: {},
     theme: EnumTheme.DARK

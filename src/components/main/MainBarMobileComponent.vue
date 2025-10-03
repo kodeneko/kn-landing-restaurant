@@ -3,22 +3,21 @@ import TitleCompo from '@components/title/TitleCompo.vue';
 import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
 import MenuMainMobileCompo from '@components/menu/MenuMainMobileCompo.vue';
 import { mainMenu } from '@globals/menu';
-import { ref } from 'vue';
+import useUserStore from '@store/User';
+import { storeToRefs } from 'pinia';
 
-const isOpen = ref<boolean>(false);
+const userStore = useUserStore();
+const { isMenuOpen } = storeToRefs(userStore);
+const { setMenuOpen } = userStore;
 
 function btnMenuClick() {
-  isOpen.value = !isOpen.value
+  setMenuOpen(!isMenuOpen.value);
 }
 
-function btnCloseClick() {
-  isOpen.value = false
+function handleCloseMenu() {
+  setMenuOpen(false);
 }
 
-function optionClick(opt: string) {
-  console.log('click', opt)
-  isOpen.value = false
-}
 </script>
 
 <template>
@@ -34,9 +33,9 @@ function optionClick(opt: string) {
       />
       <MenuMainMobileCompo 
         :opts="mainMenu"
-        @optClick="optionClick" 
-        @closeClick="btnCloseClick" 
-        :isOpen="isOpen" 
+        @optClick="handleCloseMenu" 
+        @closeClick="handleCloseMenu" 
+        :isOpen="isMenuOpen" 
       />
     </div>
   </div>
