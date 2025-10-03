@@ -7,7 +7,7 @@ defineProps<{
   full?: boolean;
 }>();
 defineEmits<{
-  click
+  (e: 'click'): void
 }>();
 </script>
 
@@ -19,7 +19,7 @@ defineEmits<{
       line ? 'line' : 'solid',
       full ? 'full' : 'srink'
     ]"
-    :on-click="$emit('click')"
+    @click="$emit('click')"
   >
     <span class="label">
       {{ label }}

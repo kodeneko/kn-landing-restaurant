@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainLayout from '../layout/MainLayout.vue';
 import DocumentView from '../views/document/DocumentView.vue';
 import HomeView from '../views/home/HomeView.vue';
+import NotFoundView from '../views/not-found/NotFoundView.vue';
 
 const routes = [
   {
@@ -50,6 +51,16 @@ const routes = [
             path: Paths.Cookies
           }
         ]
+      }
+    ]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: MainLayout,
+    children: [
+      {
+        path: '',
+        component: NotFoundView
       }
     ]
   }
