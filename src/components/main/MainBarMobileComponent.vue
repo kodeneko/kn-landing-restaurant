@@ -1,23 +1,24 @@
 <script lang="ts" setup>
 import TitleCompo from '@components/title/TitleCompo.vue';
 import BtnIconCompo from '@components/btn/BtnIconCompo.vue';
-import MenuMainMobileCompo from '@components/menu/MenuMainMobileCompo.vue';
-import { mainMenu } from '@globals/menu';
 import useUserStore from '@store/User';
 import { storeToRefs } from 'pinia';
+import { watch } from 'vue';
 
 const userStore = useUserStore();
-const { isMenuOpen } = storeToRefs(userStore);
 const { setMenuOpen } = userStore;
+const { isMenuOpen } = storeToRefs(userStore);
 
 function btnMenuClick() {
   setMenuOpen(!isMenuOpen.value);
 }
 
-function handleCloseMenu() {
-  setMenuOpen(false);
-}
-
+watch(
+  isMenuOpen,
+  (isOpen) => {
+    document.body.classList.toggle('no-scroll', isOpen);
+  }
+);
 </script>
 
 <template>
@@ -30,12 +31,6 @@ function handleCloseMenu() {
         icon="fa-solid fa-bars" 
         size="sm" 
         @click="btnMenuClick"
-      />
-      <MenuMainMobileCompo 
-        :opts="mainMenu"
-        @optClick="handleCloseMenu" 
-        @closeClick="handleCloseMenu" 
-        :isOpen="isMenuOpen" 
       />
     </div>
   </div>

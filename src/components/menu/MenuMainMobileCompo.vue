@@ -59,6 +59,7 @@ const emit = defineEmits<{
   top: 0;
   left: 0;
   width: 19rem;
+  z-index: 101;
 
   li {
     padding: 1rem 1.5rem;

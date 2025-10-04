@@ -4,9 +4,21 @@ import MainBarComponent from '../components/main/MainBarComponent.vue';
 import MainFooterComponent from '../components/main/MainFooterComponent.vue';
 import MainBarMobileComponent from '@components/main/MainBarMobileComponent.vue';
 import { motion as m } from "motion-v";
+import OverlayComponent from '@components/others/OverlayComponent.vue';
+import useUserStore from '@store/User';
+import { storeToRefs } from 'pinia';
+import { mainMenu } from '@globals/menu';
+import MenuMainMobileCompo from '@components/menu/MenuMainMobileCompo.vue';
 
+const userStore = useUserStore();
+const { isMenuOpen } = storeToRefs(userStore);
+const { setMenuOpen } = userStore;
 const isTablet = useMediaTablet();
 const isMobile = useMediaMobile();
+
+function handleCloseMenu() {
+  setMenuOpen(false);
+}
 </script>
 
 <template>
@@ -15,6 +27,13 @@ const isMobile = useMediaMobile();
       <MainBarMobileComponent v-if="isTablet || isMobile" />
       <MainBarComponent v-else />
     </div>
+    <MenuMainMobileCompo 
+      :opts="mainMenu"
+      @optClick="handleCloseMenu" 
+      @closeClick="handleCloseMenu" 
+      :isOpen="isMenuOpen" 
+    />
+    <OverlayComponent :visible="isMenuOpen" />
     <div class="mainCont">
       <RouterView />
     </div>
@@ -59,7 +78,6 @@ const isMobile = useMediaMobile();
     width: 100%;
     max-width: 1400px;
     z-index: 2;
-    position: relative;
   }
 
   .mainCont {
@@ -69,7 +87,6 @@ const isMobile = useMediaMobile();
     position: relative;
     flex-grow: 1;
   }
-  
 
   .back {
     position: absolute;
