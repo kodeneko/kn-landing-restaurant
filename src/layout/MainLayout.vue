@@ -85,7 +85,6 @@ function handleCloseMenu() {
     width: 100%;
     max-width: 1400px;
     z-index: 2;
-    height: 100px;
   }
 
   .mainCont {
