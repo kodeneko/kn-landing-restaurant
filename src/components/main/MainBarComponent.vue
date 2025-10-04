@@ -2,32 +2,17 @@
 import TitleCompo from '@components/title/TitleCompo.vue';
 import MenuMainCompo from '@components/menu/MenuMainCompo.vue';
 import { mainMenu } from '@globals/menu';
-import { motion as m } from "motion-v";
 </script>
 
 <template>
-  <m.div 
-    class="main-bar"
-    :initial="{
-      opacity: 0,
-      y: -50
-    }"
-    :animate="{
-      opacity: 1,
-      y: 0
-    }"
-    :transition="{
-      delay: 0.3,
-      duration: 0.7
-    }"
-  >
+  <div class="main-bar">
     <div class="left">
       <TitleCompo :main-title="true" />
     </div>
     <div class="right">
       <MenuMainCompo :opts="mainMenu" />
     </div>
-  </m.div>
+  </div>
 </template>
 
 <style lang="less" scoped>

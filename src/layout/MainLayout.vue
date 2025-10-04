@@ -23,10 +23,25 @@ function handleCloseMenu() {
 
 <template>
   <div class="main-layout">
-    <div class="header">
+    <m.div 
+      class="header"
+      :initial="{
+        opacity: 0,
+        y: -50
+      }"
+      :while-in-view="{
+        opacity: 1,
+        y: 0
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
       <MainBarMobileComponent v-if="isTablet || isMobile" />
       <MainBarComponent v-else />
-    </div>
+    </m.div>
     <MenuMainMobileCompo 
       :opts="mainMenu"
       @optClick="handleCloseMenu" 
@@ -37,25 +52,8 @@ function handleCloseMenu() {
     <div class="mainCont">
       <RouterView />
     </div>
-    <m.div 
-      class="footer"
-      :initial="{
-        opacity: 0,
-        y: 100
-      }"
-      :while-in-view="{
-        opacity: 1
-        , y: 0
-      }"
-      :inViewOptions="{ once: true, amount: 'some' }"
-      :transition="{
-        delay: 0.3,
-        duration: 0.7
-      }"
-    >
-      <div class="cont">
-        <MainFooterComponent />
-      </div>
+    <m.div class="footer">
+      <MainFooterComponent />
     </m.div>
     <div class="back" />
   </div>
@@ -75,12 +73,17 @@ function handleCloseMenu() {
   overflow: hidden;
 
   .header {
+    position: relative;
+    top: 0;
     width: 100%;
     max-width: 1400px;
     z-index: 2;
+    height: 100px;
   }
 
   .mainCont {
+    position: relative;
+    top: 0;
     z-index: 1;
     width: 100%;
     max-width: 1400px;
@@ -97,19 +100,14 @@ function handleCloseMenu() {
   }
 
   .footer {
+    position: relative;
+    top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: @c-dark;
     width: 100%;
-
-    .cont {
-      max-width: 1400px;
-      width: 100%;
-      position: relative;
-      width: 100%;
-      background-color: @c-dark;
-    }
+    z-index: 2;
   }
 }
 

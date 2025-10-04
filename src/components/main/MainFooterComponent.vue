@@ -48,13 +48,13 @@ import { socialList } from '@globals/social';
 <style lang="less" scoped>
 .main-footer {
   display: flex;
+  width: 1400px;
   justify-content: space-between;
   background-color: @c-dark;
   padding: 40px;
   font-size: 28px;
 
   .left {
-    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +84,6 @@ import { socialList } from '@globals/social';
   }
 
   .center {
-    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,7 +93,6 @@ import { socialList } from '@globals/social';
   }
 
   .right {
-    flex-basis: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
