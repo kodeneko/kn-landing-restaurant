@@ -2,6 +2,7 @@
 import { Menu } from '@models/user';
 import { RouterLink } from 'vue-router';
 import { motion as m } from "motion-v";
+import {AnimatePresence} from 'motion-v'
 
 const props = defineProps<{
   opts: Menu,
@@ -28,8 +29,7 @@ const emit = defineEmits<{
         x: 0
       }"
       :transition="{
-        delay: 0.3,
-        duration: 0.7
+        duration: 0.5
       }"
       :exit="{
         opacity: 0,
