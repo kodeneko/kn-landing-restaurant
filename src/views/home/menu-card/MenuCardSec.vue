@@ -4,22 +4,44 @@ import MenuNavCompo from '@components/menu/MenuNavCompo.vue';
 import TitleSecCompo from '@components/text/TitleSecCompo.vue';
 import { restDefaultSelOpt, restMenu } from '@globals/menu';
 import { Sections } from '@globals/sections';
-import { MenuOpt, Opt } from '@models/user';
+import { MenuOpt } from '@models/user';
 import { AnimatePresence, motion as m } from "motion-v";
 import useUserStore from '@store/User';
-import { onMounted, ref } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
 
+const x = ref(0);
+const contRef = ref(null);
+const constraints = reactive({ left: 0, right: 0 });
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
-onMounted(() => {
-  userStore.setRef(Sections.Menu, sectionRef.value as HTMLElement);
-})
-
 const selected = ref<MenuOpt>(restDefaultSelOpt);
 
 const handleClickOpt = (opt: MenuOpt) => {
   selected.value = opt
 }
+
+const updateConstrainst = () => {
+  if (contRef.value) {
+    const cont = contRef.value as HTMLElement;
+    const widthHidden = cont.scrollWidth;
+    constraints.left = -1 *(widthHidden );
+    constraints.right = 0;
+    x.value = 0;
+  }
+}
+
+function onDrag(event) {
+  x.value = event.detail.x
+}
+
+watch(selected, () => {
+  updateConstrainst();
+})
+
+onMounted(() => {
+  userStore.setRef(Sections.Menu, sectionRef.value as HTMLElement);
+  updateConstrainst()
+});
 </script>
 
 <template>
@@ -46,23 +68,36 @@ const handleClickOpt = (opt: MenuOpt) => {
           @click="handleClickOpt"
         />
       </div>
-      <ul class="gallery">
-        <AnimatePresence>
-          <m.li 
-            v-for="dish in selected.dishes"
-            :key="dish.id"
-            class="gallery"
-            :initial="{ opacity: 0 }"
-            :animate="{ opacity: 1 }"
-            :exit="{ opacity: 0 }"
-          >
-            <CardDishCompo 
-              :dish="dish" 
-              symbol="€" 
-            />
-          </m.li>
-        </AnimatePresence>
-      </ul>
+      <div class="outer" ref="contRef">
+        <m.ul 
+          class="gallery" 
+          drag="x"
+          :animate="{x: x}"
+          :drag-constraints="constraints"
+          :drag-momentum="false"
+          :while-tap="{ cursor: 'grabbing' }"
+          @drag="onDrag"
+        >
+          <AnimatePresence>
+            <m.li 
+              v-for="dish in selected.dishes"
+              :key="dish.id"
+              class="gallery"
+              :initial="{ opacity: 0 }"
+              :animate="{ opacity: 1 }"
+              :exit="{ opacity: 0 }"
+              
+            >
+              <CardDishCompo 
+                :dish="dish" 
+                symbol="€" 
+              />
+            </m.li>
+          </AnimatePresence>
+        </m.ul>
+
+      </div>
+
     </m.div>
   </div>
 
@@ -78,6 +113,10 @@ const handleClickOpt = (opt: MenuOpt) => {
   padding: 2.5rem;
 
   .menu-wrap {
+    overflow-x: hidden;
+  }
+
+  .outer {
     overflow-x: hidden;
   }
 
