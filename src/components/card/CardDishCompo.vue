@@ -44,7 +44,6 @@ defineProps<{
 
     .pic {
       height: 220px;
-      width: fit-content;
       align-self: center;
     }
 

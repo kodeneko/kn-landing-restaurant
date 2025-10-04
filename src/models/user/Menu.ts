@@ -1,3 +1,5 @@
+import Dish from '@models/Dish';
+
 interface Opt {
   id: string;
   label: string;
@@ -5,9 +7,6 @@ interface Opt {
   icon?: string;
 }
 
-type Menu = Opt[];
+interface MenuOpt extends Opt { dishes: Dish[] }
 
-export type {
-  Menu,
-  Opt
-};
+export type { MenuOpt, Opt };

@@ -133,7 +133,7 @@ const donburiBeef: Dish = {
 const donburiChiken: Dish = {
   desc: t('dish.donburiChiken.desc'),
   id: 'donburiChiken',
-  pic: picFolder + 'rdonburi-chiken.png',
+  pic: picFolder + 'donburi-chiken.png',
   price: 12.3,
   title: t('dish.donburiChiken.title')
 };
@@ -201,7 +201,7 @@ const drinkBeer: Dish = {
 const drinkBubbleTea: Dish = {
   desc: t('dish.drinkBubbleTea.desc'),
   id: 'drinkBubbleTea',
-  pic: picFolder + 'drink-bubbleTea.png',
+  pic: picFolder + 'drink-bubble-tea.png',
   price: 12.3,
   title: t('dish.drinkBubbleTea.title')
 };

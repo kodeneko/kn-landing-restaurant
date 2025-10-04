@@ -1,43 +1,45 @@
-import { Menu, Opt } from '@models/index';
+import { MenuOpt, Opt } from '@models/index';
 import { t } from 'i18next';
 
+import {
+  dishesDessert,
+  dishesDonburi,
+  dishesDrinks,
+  dishesRamen,
+  dishesStarters
+} from './dish';
 import { Paths } from './paths';
 import { Sections } from './sections';
 
-const optStarters: Opt = {
+const optStarters: MenuOpt = {
+  dishes: dishesStarters,
   id: 'starters',
   label: t('label.starters')
 };
 
-const optRamen: Opt = {
+const optRamen: MenuOpt = {
+  dishes: dishesRamen,
   id: 'ramen',
   label: t('label.ramen')
 };
 
-const optDonburi: Opt = {
+const optDonburi: MenuOpt = {
+  dishes: dishesDonburi,
   id: 'donburi',
   label: t('label.donburi')
 };
 
-const optDessert: Opt = {
+const optDessert: MenuOpt = {
+  dishes: dishesDessert,
   id: 'dessert',
   label: t('label.dessert')
 };
 
-const optDrinks: Opt = {
+const optDrinks: MenuOpt = {
+  dishes: dishesDrinks,
   id: 'drinks',
   label: t('label.drinks')
 };
-
-const restMenu: Menu = [
-  optStarters,
-  optRamen,
-  optDonburi,
-  optDessert,
-  optDrinks
-];
-
-const restDefaultSelOpt = restMenu.find((r) => r.id === optRamen.id);
 
 const optMenu: Opt = {
   href: Paths.Menu,
@@ -63,12 +65,22 @@ const optContact: Opt = {
   label: t('label.contact')
 };
 
-const mainMenu: Menu = [
+const restMenu: MenuOpt[] = [
+  optStarters,
+  optRamen,
+  optDonburi,
+  optDessert,
+  optDrinks
+];
+
+const mainMenu: Opt[] = [
   optMenu,
   optLocation,
   optDelivery,
   optContact
 ];
+
+const restDefaultSelOpt = optRamen;
 
 export {
   mainMenu,

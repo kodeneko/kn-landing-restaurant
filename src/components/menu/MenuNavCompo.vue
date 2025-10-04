@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { Opt } from '@models/user';
+import { MenuOpt } from "@models/user";
 import { motion as m } from "motion-v";
 import { onMounted } from 'vue';
 import { reactive, ref } from 'vue';
 
 defineProps<{
-  selected: Opt;
-  opts: Opt[]
+  selected: MenuOpt;
+  opts: MenuOpt[]
 }>();
 defineEmits<{
-  click: [opt: Opt]
+  click: [opt: MenuOpt]
 }>();
 
 const contRef = ref(null);
@@ -40,14 +40,14 @@ onMounted(() => {
     >
       <li
         v-for="opt in opts"
-        :key="opt.id"
-        :on-click="$emit('click', opt)"  
+        :key="opt.id" 
       >
-        <RouterLink 
+        <button 
           :class="{opt: true, selected: selected.id === opt.id}"
           :to="opt.href as string" 
+          @click="$emit('click', opt)" 
         >{{ opt.label }}
-        </RouterLink>
+        </button>
       </li>
     </m.ul>
   </div>
