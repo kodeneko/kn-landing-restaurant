@@ -5,13 +5,13 @@ import { Sections } from '@globals/sections';
 import { useMediaMobile } from '@hooks/useMedia';
 import useUserStore from '@store/User';
 import { onMounted, ref } from 'vue';
+import { motion as m, stagger } from "motion-v";
 
 const userStore = useUserStore();
 const sectionRef = ref<HTMLElement | null>(null);
 onMounted(() => {
   userStore.setRef(Sections.Delivery, sectionRef.value as HTMLElement);
 })
-import { motion as m, stagger } from "motion-v";
 
 const isMobile = useMediaMobile();
 const sizeBtns = () => isMobile ? 'sm' : 'md';

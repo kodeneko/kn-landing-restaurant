@@ -1,3 +1,4 @@
+import { mainMenu } from '@globals/menu';
 import { Sections } from '@globals/sections';
 import { EnumLang, EnumTheme } from '@models/user';
 import { defineStore } from 'pinia';
@@ -20,7 +21,7 @@ type UserStoreGetters = { getLang: () => EnumLang };
 
 type UserStoreActions = {
   setMenuOpen: (isMenuOpen: boolean) => void;
-  scrollToSection: (section: keyof UserStoreState['refSections']) => void;
+  scrollToSection: (pathname: string) => void;
   setLang: (lang: EnumLang) => void;
   setRef: (section: keyof UserStoreState['refSections'], ref: HTMLElement) => void;
   setTheme: (theme: EnumTheme) => void;
@@ -28,10 +29,13 @@ type UserStoreActions = {
 
 const useUserStore = defineStore<'user', UserStoreState, UserStoreGetters, UserStoreActions>('user', {
   actions: {
-    scrollToSection (section: keyof UserStoreState['refSections']) {
-      const elRef = this.refSections[section];
-      if (elRef) {
-        elRef.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection (pathname: string) {
+      const idSection = mainMenu.find((opt) => opt.href === pathname)?.id;
+      if (idSection) {
+        const elRef = this.refSections[idSection as keyof UserStoreState['refSections']];
+        if (elRef) {
+          elRef.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     },
     setLang (lang: EnumLang) {

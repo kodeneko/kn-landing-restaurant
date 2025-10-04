@@ -22,41 +22,44 @@ const dishes = ref<Dish[]>(restDefaultDishes)
 </script>
 
 <template>
-  <m.div 
-    class="menu-card-sec"
-    :initial="{
-      opacity: 0
-    }"
-    :while-in-view="{
-      opacity: 1
-    }"
-    :inViewOptions="{ once: true, amount: 'some' }"
-    :transition="{
-      delay: 0.3,
-      duration: 0.7
-    }"
-  >
-    <TitleSecCompo>Menu</TitleSecCompo>
-    <div class="menu-wrap">
-      <MenuNavCompo 
-        :selected="selected" 
-        :opts="restMenu"
-        :click="(opt: Opt) => selected = opt"
-      />
-    </div>
-    <ul class="gallery">
-      <li 
-        v-for="dish in dishes"
-        :key="dish.id"
-        class="gallery"
-      >
-        <CardDishCompo 
-          :dish="dish" 
-          symbol="€" 
+  <div ref="sectionRef">
+    <m.div 
+      class="menu-card-sec"
+      :initial="{
+        opacity: 0
+      }"
+      :while-in-view="{
+        opacity: 1
+      }"
+      :inViewOptions="{ once: true, amount: 'some' }"
+      :transition="{
+        delay: 0.3,
+        duration: 0.7
+      }"
+    >
+      <TitleSecCompo>Menu</TitleSecCompo>
+      <div class="menu-wrap">
+        <MenuNavCompo 
+          :selected="selected" 
+          :opts="restMenu"
+          :click="(opt: Opt) => selected = opt"
         />
-      </li>
-    </ul>
-  </m.div>
+      </div>
+      <ul class="gallery">
+        <li 
+          v-for="dish in dishes"
+          :key="dish.id"
+          class="gallery"
+        >
+          <CardDishCompo 
+            :dish="dish" 
+            symbol="€" 
+          />
+        </li>
+      </ul>
+    </m.div>
+  </div>
+
 </template>
 
 <style lang="less" scoped>

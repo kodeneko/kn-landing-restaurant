@@ -9,12 +9,19 @@ import useUserStore from '@store/User';
 import { storeToRefs } from 'pinia';
 import { mainMenu } from '@globals/menu';
 import MenuMainMobileCompo from '@components/menu/MenuMainMobileCompo.vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute()
 const userStore = useUserStore();
 const { isMenuOpen } = storeToRefs(userStore);
 const { setMenuOpen } = userStore;
 const isTablet = useMediaTablet();
 const isMobile = useMediaMobile();
+
+function handleOptMenu() {
+  userStore.scrollToSection(route.path)
+  handleCloseMenu();
+}
 
 function handleCloseMenu() {
   setMenuOpen(false);
@@ -44,7 +51,7 @@ function handleCloseMenu() {
     </m.div>
     <MenuMainMobileCompo 
       :opts="mainMenu"
-      @optClick="handleCloseMenu" 
+      @optClick="handleOptMenu" 
       @closeClick="handleCloseMenu" 
       :isOpen="isMenuOpen" 
     />

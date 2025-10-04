@@ -6,26 +6,13 @@ import DeliverySection from './delivery/DeliverySection.vue';
 import ContactSection from './contact-section/ContactSection.vue';
 import { onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { PathList } from '@globals/paths';
-import useUserStore, { UserStoreState } from '@store/User';
-import { mainMenu } from '@globals/menu';
+import useUserStore from '@store/User';
 
 const route = useRoute()
 const store = useUserStore();
 
-function scrollIfMatch(pathname: string) {
-  if (PathList.includes(pathname)) {
-    const idSection = mainMenu.find(opt => opt.href === pathname)?.id
-    if (idSection) store.scrollToSection(idSection as keyof UserStoreState['refSections'])
-  }
-}
-
 onMounted(() => {
-  scrollIfMatch(route.path)
-})
-
-watch(() => route.path, (newPath) => {
-  scrollIfMatch(newPath)
+  store.scrollToSection(route.path)
 })
 
 </script>
