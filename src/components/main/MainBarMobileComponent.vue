@@ -47,6 +47,8 @@ watch(
   }
 
   .right {
+    position: fixed;
+    right: 1.25rem;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
