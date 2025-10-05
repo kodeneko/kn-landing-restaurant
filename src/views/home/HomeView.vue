@@ -1,15 +1,26 @@
 <script lang="ts" setup>
-import InitSection from './InitSection.vue'
-import MenuCardSection from './menu-card-section/MenuCardSection.vue'
-import LocationSection from './location-section/LocationSection.vue'
-import DeliverySection from './DeliverySection.vue'
-import ContactSection from './contact-section/ContactSection.vue'
+import WelcomeSec from './welcome/WelcomeSec.vue'
+import MenuCardSec from './menu-card/MenuCardSec.vue'
+import LocationSection from './location/LocationSection.vue';
+import DeliverySection from './delivery/DeliverySection.vue';
+import ContactSection from './contact-section/ContactSection.vue';
+import { onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import useUserStore from '@store/User';
+
+const route = useRoute()
+const store = useUserStore();
+
+onMounted(() => {
+  store.scrollToSection(route.path)
+})
+
 </script>
 
 <template>
   <div class="cont">
-    <InitSection />
-    <MenuCardSection />
+    <WelcomeSec />
+    <MenuCardSec />
     <LocationSection />
     <DeliverySection />
     <ContactSection />

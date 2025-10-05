@@ -12,9 +12,18 @@
     "test": "vitest --dom"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
     "i18next": "^23.12.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-vue": "^4.0.0",
+    "marked": "^16.3.0",
+    "motion-v": "^1.7.1",
     "pinia": "^2.2.0",
     "reset-css": "^5.0.2",
     "vue": "^3.4.31",
@@ -32,6 +41,7 @@
     "@storybook/vue3": "^8.2.6",
     "@storybook/vue3-vite": "^8.2.6",
     "@stylistic/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^8.2.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.7.0",
@@ -60,5 +70,6 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "packageManager": "pnpm@7.30.5+sha1.ba4f8057ab7b24db2ebe553808b95adb55b5330f"
 }
